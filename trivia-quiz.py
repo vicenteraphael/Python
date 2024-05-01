@@ -16,15 +16,15 @@ def question5():
     print ("a) verbo \nb) preposição \nc) advérbio \nd) interjeição"); print ("\n")
 def question6():
     print ("6. O número 293.45 pertence ao conjunto dos números:"); print ("\n")
-    print ("a) Racionais \nb) Inteiros \nc) Irracionais \nd) Naturais"); print ("\n")
+    print ("a) Inteiros \nb) Racionais \nc) Irracionais \nd) Naturais"); print ("\n")
 def question7():
     print ("7. Regime político no qual o rei possui total poder:"); print ("\n")
     print ("a) Democracia \nb) Absolutismo \nc) Anarquismo \nd) Comunismo"); print ("\n")
 def question8():
     print ("8. No dia 21 de abril comemora-se:"); print ("\n")
-    print ("a) Dia de Tiradentes \nb) Páscoa \nc) Dia do Trabalho \nd) Carnaval"); print ("\n")
+    print ("a) Carnaval \nb) Páscoa \nc) Dia do Trabalho \nd) Dia de Tiradentes "); print ("\n")
 def question9():
-    print ("9. Qual figura de linguagem predominante no ditado popular: 'Água mole. Pedra dura. Tanto bate até que fura'?"); print ("\n")
+    print ("9. Qual figura de linguagem predominante no ditado popular: 'Água mole em pedra dura, tanto bate até que fura'?"); print ("\n")
     print ("a) Antítese \nb) Metonímia \nc) Metáfora \nd) Prosopopéia"); print ("\n")
 def question10():
     print ("10. De quantas maneiras podemos arranjar uma fila de 4 pessoas?"); print ("\n")
@@ -69,7 +69,7 @@ while r != "s":
         case "d":
             print ("errado ;-;")
             e = e + 1
-    r = input("Pressione 'enter' para continuar: ")
+    r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 2:
     print ("\n")
@@ -91,7 +91,7 @@ while r != "s":
         case "d":
             print ("errado ;-;")
             e = e + 1
-    r = input("Pressione 'enter' para continuar: ")
+    r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 3:
     print ("\n")
@@ -108,12 +108,12 @@ while r != "s":
             print ("errado ;-;")
             e = e + 1
         case "c":
-            print ("Correto!")
-            a = a + 1
-        case "d":
             print ("errado ;-;")
             e = e + 1
-    r = input("Pressione 'enter' para continuar: ")
+        case "d":
+            print ("Correto!")
+            a = a + 1
+    r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 4:
     print ("\n")
@@ -135,7 +135,7 @@ while r != "s":
         case "d":
             print ("errado ;-;")
             e = e + 1
-    r = input("Pressione 'enter' para continuar: ")
+    r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 5:
     print ("\n")
@@ -157,7 +157,7 @@ while r != "s":
         case "d":
             print ("errado ;-;")
             e = e + 1
-    r = input("Pressione 'enter' para continuar: ")
+    r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 6:
     print ("\n")
@@ -168,18 +168,18 @@ while r != "s":
         r = input ()
     match r:
         case "a":
-            print ("Correto!")
-            a = a + 1
-        case "b":
             print ("errado ;-;")
             e = e + 1
+        case "b":
+            print ("Correto!")
+            a = a + 1
         case "c":
             print ("errado ;-;")
             e = e + 1
         case "d":
             print ("errado ;-;")
             e = e + 1
-    r = input("Pressione 'enter' para continuar: ")
+    r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 7:
     print ("\n")
@@ -201,7 +201,7 @@ while r != "s":
         case "d":
             print ("errado ;-;")
             e = e + 1
-    r = input("Pressione 'enter' para continuar: ")
+    r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 8:
     print ("\n")
@@ -212,8 +212,8 @@ while r != "s":
         r = input ()
     match r:
         case "a":
-            print ("Correto!")
-            a = a + 1
+            print ("errado ;-;")
+            e = e + 1
         case "b":
             print ("errado ;-;")
             e = e + 1
@@ -221,9 +221,9 @@ while r != "s":
             print ("errado ;-;")
             e = e + 1
         case "d":
-            print ("errado ;-;")
-            e = e + 1
-    r = input("Pressione 'enter' para continuar: ")
+            print ("Correto!")
+            a = a + 1
+    r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 9:
     print ("\n")
@@ -245,7 +245,7 @@ while r != "s":
         case "d":
             print ("errado ;-;")
             e = e + 1
-    r = input("Pressione 'enter' para continuar: ")
+    r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 10:
     print ("\n")
@@ -267,7 +267,7 @@ while r != "s":
         case "d":
             print ("Correto!")
             a = a + 1
-    r = input("Pressione 'enter' para ver seus resultados: ")
+    r = input("Pressione 'Enter' para ver seus resultados: ")
 
     #Resultado e ponderações:
     print ("\n")
@@ -287,7 +287,7 @@ while r != "s":
     else:
         print ("Parabéns! Excelente!")
     print ("\n")
-    r = input("Pressione 'enter' para continuar: ")
+    r = input("Pressione 'Enter' para continuar: ")
     print ("\n"); print ("\n")
 
     #Gabarito:
@@ -300,9 +300,9 @@ while r != "s":
         r = input ()
     if r == "1":
         print ("\n")
-        print ("1. b)     4. a)      7. b) \n2. c)     5. c)     8. a)     10. d) \n3. c)     6. a)     9. a)")
+        print ("1. b)     4. a)     7. b) \n2. c)     5. c)     8. d)     10. d) \n3. d)     6. b)     9. a)")
     print ("\n")
-    r = input("Pressione 'enter' para continuar: "); print ("\n")
+    r = input("Pressione 'Enter' para continuar: "); print ("\n")
     print ("\n")
 
     #Voltar ao Início ou Sair:
