@@ -6,6 +6,8 @@ if cont == "s":
     print ("\n")
     print ("Adeus!")
 while cont != "s":
+    #Índice da sequência:
+
     print ("\n")
     print ("Desejas ver a sequência de contnacci exibida até qual termo? \n*para sair, digite 's'*"); print ("\n")
     cont = input (); print ("\n")

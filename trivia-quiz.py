@@ -27,7 +27,7 @@ def question9():
     print ("9. Qual figura de linguagem predominante no ditado popular: 'Água mole em pedra dura, tanto bate até que fura'?"); print ("\n")
     print ("a) Antítese \nb) Metonímia \nc) Metáfora \nd) Prosopopéia"); print ("\n")
 def question10():
-    print ("10. De quantas maneiras podemos arranjar uma fila de 4 pessoas?"); print ("\n")
+    print ("10. De quantas maneiras podemos organizar uma fila de 4 pessoas?"); print ("\n")
     print ("a) 16 \nb) 8 \nc) 12 \nd) 24"); print ("\n")
 def msg_erro():
     print ("\n"); print ("*Alternativa inválida*")
