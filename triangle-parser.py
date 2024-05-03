@@ -3,13 +3,9 @@ def msg_erro():
     print ("*entre com números*"); print ("\n")
 def msg_adeus():
     print ("\n")
-    print ("Adeus")
-def angulo():
-    print ("\n")
-    print ("Desejas ter Seno, Cosseno e Tangente referentes a qual ângulo? \n*para sair, digite 's'*"); print ("\n")
-    print ("1) Alfa \n2) Beta"); print ("\n")
+    print ("Adeus!")
 print ("\n")
-print ("Bem-vindo ao Avaliador de Triângulos do Raphael"); print ("\n")
+print ("Bem-vindo à Calculadora Trigonométrica do Raphael"); print ("\n")
 print ("Pressione 'Enter' para continuar \nPara sair, digite 's'"); print ("\n")
 a = input ()
 if a == "s":
@@ -49,9 +45,9 @@ while a != "s":
         break
     c = float(c)
     print ("\n")
-    #Cálculo:
+    #Tipo de Triângulo:
 
-    if a < b + c or b < a + c or c < a + b:    
+    if a < b + c and b < a + c and c < a + b:    
         if a == b and b == c:
             print ("O Triângulo é Equilátero")
         elif a == b or b == c or b == a:
@@ -59,76 +55,46 @@ while a != "s":
         elif a != b and b != c and a != c:
             print ("O Triângulo é Escaleno")
         if a**2 == b**2 + c**2 or b**2 == a**2 + c**2 or c**2 == b**2 + a**2:
-            print ("O triângulo é Retângulo"); print ("\n")
-        # Cálculo para Triângulo Retângulo:
-            if a > b and a > c and b > c:
-                hip = a
-                catma = b
-                catme= c
-            elif a > b and a > c and c > b:
-                hip = a
-                catma = c
-                catme= b
-            elif b > a and b > c and a > c:
-                hip = b
-                catma = a
-                catme = c
-            elif b > a and b > c and c > a:
-                hip = b
-                catma = c
-                catme = a
-            elif c > a and c > b and a > b:
-                hip = c
-                catma = a
-                catme = b
-            elif c > a and c > b and b > a:
-                hip = c
-                catma = b
-                catme = a
-            print ("\nTendo Alfa como sendo o ângulo entre a hipotenusa o cateto menor\n e Beta como sendo o ângulo entre a hipotenusa e o maior cateto"); print ("\n")
-            print ("Entre com o valor dos ângulos:"); print ("\n")
-            A = input ("Alfa: ")
-            while A.isalpha == True:
-                msg_erro()
-                A = input ()
-                if A == "s":
-                    break
-            if A == "s":
+            print ("O triângulo é Retângulo")
+        print ("\n")
+        print ("Desejas:"); print ("\n")
+        print ("1) Voltar ao início \n2) Calcular Seno, Cosseno e Tangente \n3) Sair"); print ("\n")
+        r = input (); print ("\n")
+        if r != "1" and r != "2" and r != "3":
+            print ("*alternativa inválida* Desejas:"); print ("\n")
+            print ("1) Voltar ao início \n2) Calcular Seno, Cosseno e Tangente \n3) Sair"); print ("\n")
+            r = input (); print ("\n")
+        elif r == "3":
+            print ("Adeus")
+            break
+        elif r == "2":
+        # Cálculo Trigonométrico:
+
+            print ("\nTendo Alfa como sendo o ângulo oposto ao lado a:", a ,"\n Beta sendo o ângulo oposto ao lado b:", b,"\ne Theta sendo o ângulo oposto ao lado c:", c,); print ("\n")
+            cosa = (a**2 - (b**2 + c**2)) / (- 2 * b * c)
+            sina = (1 - cosa**2) ** 0.5
+            tga = sina / cosa
+            cosb = (b**2 - (a**2 + c**2)) / (- 2 * a * c)
+            sinb = (1 - cosb**2) ** 0.5
+            tgb = sinb / cosb
+            cosc = (c**2 - (a**2 + b**2)) / (- 2 * a * b)
+            sinc = (1 - cosc**2) ** 0.5
+            tgc = sinc / cosc
+            print ("seno de Alfa =", sina, "      cosseno de Alfa =", cosa, "      tangente de Alfa =", tga)
+            print ("seno de Beta =", sinb, "      cosseno de Beta =", cosb, "      tangente de Beta =", tgb)
+            print ("seno de Theta =", sinc, "      cosseno de Theta =", cosc, "      tangente de Theta =", tgc); print ("\n")
+            print ("Para continuar, pressione 'Enter' \nPara sair, digite 's'"); print ("\n")
+            r = input ()
+            if r == "s":
                 msg_adeus()
                 break
-            A = float(A)
-            B = input ("Beta: ")
-            while B.isalpha == True:
-                msg_erro()
-                B = input ()
-                if B == "s":
-                    break
-            if B == "s":
-                msg_adeus()
-                break
-            sina = catma / hip
-            cosa = catme / hip
-            tga = catma / catme
-            sinb = catme / hip
-            cosb = catma / hip
-            tgb = catme / catma
-            r = ""
-            while r != "s":
-                angulo()
-                r = input ()
-                while r != "1" and r != "2":
-                    print ("*alternativa inválida*")
-                    angulo()
-                    r = input (); print ("\n")
-                    if r == "s":
-                        break
-                if r == "s":
-                    print ("Adeus!")
-                    break
-                if r == "1":
-                    print ("seno de Alfa =", sina, "cosseno de Alfa =", cosa, "tangente de Alfa =", tga)
-                elif r == "2":
-                    print ("seno de Alfa =", sinb, "cosseno de Alfa =", cosb, "tangente de Alfa =", tgb)       
+        elif r == "1":
+            continue
     else:
-        print ("Os valores dados não formam um triângulo")
+        print ("Os valores dados não formam um triângulo :/"); print ("\n")
+        print ("Para continuar, pressione 'Enter' \nPara sair, digite 's'"); print ("\n")
+        r = input ()
+        if r == "s":
+            msg_adeus()
+            break
     print ("\n")
