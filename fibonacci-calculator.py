@@ -14,7 +14,7 @@ while cont != "s":
         break
     while cont.isnumeric() == False:
         print ("*Entre com um número inteiro*"); print ("\n")
-        cont = input ()
+        cont = input (); print ("\n")
     print ("Aqui está a sequência de Fibonacci exibida até o", cont,"º", "termo:"); print ("\n")
     cont = int(cont)
     num = 0

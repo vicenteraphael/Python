@@ -4,6 +4,10 @@ def msg_erro():
 def msg_adeus():
     print ("\n")
     print ("Adeus")
+def angulo():
+    print ("\n")
+    print ("Desejas ter Seno, Cosseno e Tangente referentes a qual ângulo? \n*para sair, digite 's'*"); print ("\n")
+    print ("1) Alfa \n2) Beta"); print ("\n")
 print ("\n")
 print ("Bem-vindo ao Avaliador de Triângulos do Raphael"); print ("\n")
 print ("Pressione 'Enter' para continuar \nPara sair, digite 's'"); print ("\n")
@@ -14,7 +18,7 @@ while a != "s":
     #Valores de Entrada:
 
     print ("Entre com os valores do Triângulo: \n*Para sair, digite 's'*"); print ("\n")
-    a = input ("1º lado: ")
+    a = input ("1º lado (a): ")
     while a.isalpha == True:
         msg_erro()
         a = input ()
@@ -24,7 +28,7 @@ while a != "s":
         msg_adeus()
         break
     a = float(a)
-    b = input ("2º lado: ")
+    b = input ("2º lado (b): ")
     while b.isalpha == True:
         msg_erro()
         b = input ()
@@ -34,7 +38,7 @@ while a != "s":
         msg_adeus()
         break
     b = float(b)
-    c = input ("3º lado: ")
+    c = input ("3º lado (c): ")
     while c.isalpha == True:
         msg_erro()
         c = input ()
@@ -57,39 +61,74 @@ while a != "s":
         if a**2 == b**2 + c**2 or b**2 == a**2 + c**2 or c**2 == b**2 + a**2:
             print ("O triângulo é Retângulo"); print ("\n")
         # Cálculo para Triângulo Retângulo:
-        
-            print ("Entre com o valor dos ângulos: ")
-            a = input ("1º ângulo: ")
-            while a.isalpha == True:
+            if a > b and a > c and b > c:
+                hip = a
+                catma = b
+                catme= c
+            elif a > b and a > c and c > b:
+                hip = a
+                catma = c
+                catme= b
+            elif b > a and b > c and a > c:
+                hip = b
+                catma = a
+                catme = c
+            elif b > a and b > c and c > a:
+                hip = b
+                catma = c
+                catme = a
+            elif c > a and c > b and a > b:
+                hip = c
+                catma = a
+                catme = b
+            elif c > a and c > b and b > a:
+                hip = c
+                catma = b
+                catme = a
+            print ("\nTendo Alfa como sendo o ângulo entre a hipotenusa o cateto menor\n e Beta como sendo o ângulo entre a hipotenusa e o maior cateto"); print ("\n")
+            print ("Entre com o valor dos ângulos:"); print ("\n")
+            A = input ("Alfa: ")
+            while A.isalpha == True:
                 msg_erro()
-                a = input ()
-                if a == "s":
+                A = input ()
+                if A == "s":
                     break
-            if a == "s":
+            if A == "s":
                 msg_adeus()
                 break
-            a = float(a)
-            b = input ("2º ângulo: ")
-            while b.isalpha == True:
+            A = float(A)
+            B = input ("Beta: ")
+            while B.isalpha == True:
                 msg_erro()
-                b = input ()
-                if b == "s":
+                B = input ()
+                if B == "s":
                     break
-            if b == "s":
+            if B == "s":
                 msg_adeus()
                 break
-            b = float(b)
-            c = input ("3º ângulo: ")
-            while c.isalpha == True:
-                msg_erro()
-                c = input ()
-                if c == "s":
+            sina = catma / hip
+            cosa = catme / hip
+            tga = catma / catme
+            sinb = catme / hip
+            cosb = catma / hip
+            tgb = catme / catma
+            r = ""
+            while r != "s":
+                angulo()
+                r = input ()
+                while r != "1" and r != "2":
+                    print ("*alternativa inválida*")
+                    angulo()
+                    r = input (); print ("\n")
+                    if r == "s":
+                        break
+                if r == "s":
+                    print ("Adeus!")
                     break
-            if c == "s":
-                msg_adeus()
-                break
-            c = float(c)
-            print ("\n")
+                if r == "1":
+                    print ("seno de Alfa =", sina, "cosseno de Alfa =", cosa, "tangente de Alfa =", tga)
+                elif r == "2":
+                    print ("seno de Alfa =", sinb, "cosseno de Alfa =", cosb, "tangente de Alfa =", tgb)       
     else:
         print ("Os valores dados não formam um triângulo")
     print ("\n")
