@@ -1,17 +1,26 @@
+""""
+Variáveis:
+a
+b
+r
+op1
+op2
+op3
+"""
 print ("\n")
 print ("Bem-vindo à Calculadora do Raphael"); print ("\n")
 op3 = "="
 op1 = ""
 while op1 != "a":
     # 1ª parte: a + b = r :
-    a = input ("*Número: ")
+    a = input ("Número: ")
     while op1 != "a":
         # 3ª parte - loop:
         if op3 != "=":
-            b = input(".Número: ")
+            b = input("Número: ")
         else:
             op1 = input("Operação: ")
-            b = input("-Número: ")
+            b = input("Número: ")
         if op1 == "+":
             r = float(a) + float(b)
         elif op1 == "-":

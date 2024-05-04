@@ -1,4 +1,12 @@
-#Questões e Mensagem de Erro:
+"""
+Variáveis:
+a = acertos
+e = erros
+r = variável resposta
+"""
+
+#Funções:
+
 def question1():
     print ("1. Qual o plural da palavra 'qualquer'?"); print ("\n")
     print ("a) quaisqueres \nb) quaisquer \nc) qualqueres \nd) não existe"); print ("\n")
@@ -32,11 +40,11 @@ def question10():
 def msg_erro():
     print ("\n"); print ("*Alternativa inválida*")
 
-#Interface do Quiz:
-
 r = ""
 while r != "s":
-    #Tela Inicial:
+
+    #Menu Inicial:
+
     a = 0
     e = 0
 
@@ -50,6 +58,7 @@ while r != "s":
         break
     
     #Pergunta 1:
+
     print ("\n")
     question1()
     r = input ()
@@ -72,6 +81,7 @@ while r != "s":
     r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 2:
+
     print ("\n")
     question2()
     r = input ()
@@ -94,6 +104,7 @@ while r != "s":
     r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 3:
+
     print ("\n")
     question3()
     r = input ()
@@ -116,6 +127,7 @@ while r != "s":
     r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 4:
+
     print ("\n")
     question4()
     r = input ()
@@ -138,6 +150,7 @@ while r != "s":
     r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 5:
+    
     print ("\n")
     question5()
     r = input ()
@@ -160,6 +173,7 @@ while r != "s":
     r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 6:
+
     print ("\n")
     question6()
     r = input ()
@@ -182,6 +196,7 @@ while r != "s":
     r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 7:
+
     print ("\n")
     question7()
     r = input ()
@@ -204,6 +219,7 @@ while r != "s":
     r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 8:
+
     print ("\n")
     question8()
     r = input ()
@@ -226,6 +242,7 @@ while r != "s":
     r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 9:
+
     print ("\n")
     question9()
     r = input ()
@@ -248,6 +265,7 @@ while r != "s":
     r = input("Pressione 'Enter' para continuar: ")
 
     #Pergunta 10:
+
     print ("\n")
     question10()
     r = input ()
@@ -270,6 +288,7 @@ while r != "s":
     r = input("Pressione 'Enter' para ver seus resultados: ")
 
     #Resultado e ponderações:
+
     print ("\n")
     print ("RESULTADOS:"); print ("\n"); print ("Acertos:", a, "\nErros:", e); print ("\n")
     if a <= 2 and a >= 1:
@@ -291,6 +310,7 @@ while r != "s":
     print ("\n"); print ("\n")
 
     #Gabarito:
+
     print ("\n")
     print ("Desejas ver o gabarito?"); print ("\n"); print ("1) Sim \n2) Não"); print ("\n"); print ("\n")
     r = input ()
@@ -306,6 +326,7 @@ while r != "s":
     print ("\n")
 
     #Voltar ao Início ou Sair:
+
     print ("Desejas voltar ao início ou sair?"); print ("\n"); print ("1) Voltar ao início \n2) Sair"); print ("\n")
     r = input (); print ("\n")
     while r != "1" and r != "2":
