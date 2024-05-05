@@ -5,9 +5,14 @@ b = índice do termo desejado (n de an); termo qualquer (an)
 n = variável resposta; razão (n) da progressão
 
 """
-a = 0
-b = 0
-n = 0
+
+a = ""
+b = ""
+n = ""
+
+def informe():
+    print ("\n*Para sair, entre com 's' \nPara voltar ao menu de opções, entre com 'm'* \n\nInforme: \n\n")
+
 def menu():
     print ("Desejas encontrar:"); print ("\n")
     print ("1) Um termo n da progressão (an) \n2) A razão da progressão (q) \n3) A soma geral FINITA dos termos da progressão (Sn) \n4) A soma geral INFINITA dos termos da progressão \n5) Sair ")
@@ -21,11 +26,11 @@ print ("\n")
 def voltar_sair():
     print ("\n")
     print ("Desejas:"); print ("\n")
-    print ("1) Voltar ao Menu de opções \n2) Sair"); print ("\n")
+    print ("1) Continuar \n2) Voltar ao Menu de opções \n3) Sair"); print ("\n")
 
-# Boas vindas:
+# Boas viadas:
 
-print ("Bem-vindo à Calculadora de Progressão Geométrica do Raphael"); print ("\n")
+print ("\nBem-vindo à Calculadora de Progressão Geométrica do Raphael"); print ("\n")
 print ("Para continuar, pressione 'Enter' \nPara sair, digite 's'"); print ("\n")
 n = input ()
 if n == "s":
@@ -34,7 +39,11 @@ if n == "s":
 # Menu de opções:
 
 while n != "s":
-
+    if a == "s" or b == "s" or n == "s" or a == "3":
+        break
+    a = ""
+    b = ""
+    n = ""
     print ("\n"); menu()
     n = input ()
     while n != "1" and n != "2" and n != "3" and n != "4" and n != "5":
@@ -47,277 +56,266 @@ while n != "s":
 
     # Termo Geral da Progressão (an):
 
-    elif n == "1":
-
-        # Entrada:
-
-        print ("\n")
-        print (" *para sair, entre com 's'* \nPara voltar ao Menu de opções, entre com 'm'"); print ("Informe-me:")
-        while True:
-            try:        
-                a = input ("1º termo da progressão (a1): ")
-                if a == "s":
-                    break
-                elif a == "m":                
-                    break
-                else:
-                    a = float(a)
-                    break
-            except ValueError or TypeError:
-                print ("Entre com números!")
-                if a == "s":
-                    break
-        if a == "s":
-            msg_adeus()
-            break
-        elif a == "m":
-            continue
-        while a != "m":
-            while True:
-                try:
-                    b = input ("Índice do termo desejado (n de an): ")
-                    if b == "s":
-                        break
-                    elif b == "m":
-                        break
-                    else:
-                        b = float(b)
-                        break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-                    if b == "s":
-                        break
-            if b == "s":
-                msg_adeus()
+    if n == "1":
+        while n == "1":
+            if a == "m" or a == "s" or b == "m" or b == "s" or n == "m" or n == "s" or a == "3" or a == "2":
                 break
-            elif b == "m":
-                continue
-        while b != "m":
-            while True:
-                try:
-                    n = input ("Razão da progressão (q): ")
-                    if n == "s":
-                        break
-                    else:
-                        n = float(n)
-                        break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-                    if n == "s":
-                        break
-            if n == "s":
-                msg_adeus()
-                break
-            if n == "m":
-                continue
-        while n != "m":
-            # Saída:
+            # Entrada:
 
-            print ("\n")
-            print ("an =", a * n ** (b-1) )
-
-        # Voltar ou Sair:
-
-        voltar_sair()
-        n = input ()
-        if n == "2":
-            msg_adeus()
-            break
-
-    # Razão da progressão (q):
-
-    elif n == "2":
-
-        # Entrada:
-        print ("\n")
-        print ("*para sair, entre com 's'* \nInforme-me dois termos consecutivos: "); print ("\n")
-        while True:
-            try:        
-                b = input ("1º termo da progressão (an): ")
-                if b == "s":
-                    break
-                elif b == "m":
-                    break
-                else:
-                    b = float(b)
-                    break
-            except ValueError or TypeError:
-                print ("Entre com números!")
-                if b == "s":
-                    break
-        if b == "s":
-            msg_adeus()
-            break
-        elif b == "m":
-            continue
-        if b != "m":
+            informe()
             while True:
                 try:        
-                    a = input ("Termo anterior (an - 1): ")
-                    if a == "s":
-                        break
-                    elif a == "m":
+                    a = input ("1º termo da progressão (a1): ")
+                    if a == "s" or a == "m":
                         break
                     else:
                         a = float(a)
                         break
                 except ValueError or TypeError:
                     print ("Entre com números!")
-                    if a == "s":
-                        break
-                    elif a == "m":
+                    if a == "s" or a == "m":
                         break
             if a == "s":
                 msg_adeus()
                 break
-            if a == "m":
-                continue
-        if a != "m":
-            # Saída:
+            elif a != "m":
+                while True:
+                    try:
+                        b = input ("Índice do termo desejado (n de an): ")
+                        if b == "s" or b == "m":
+                            break
+                        else:
+                            b = float(b)
+                            break
+                    except ValueError or TypeError:
+                        print ("Entre com números!")
+                        if b == "s" or b == "m":
+                            break
+                if b == "s":
+                    msg_adeus()
+                    break
+            if b != "m" and a != "m":
+                while True:
+                    try:
+                        n = input ("Razão da progressão (q): ")
+                        if n == "s" or n == "m":
+                            break
+                        else:
+                            n = float(n)
+                            break
+                    except ValueError or TypeError:
+                        print ("Entre com números!")
+                        if n == "s" or n == "m":
+                            break
+                if n == "s":
+                    msg_adeus()
+                    break
+            if n != "m" and a != "m" and b != "m":
+                # Saída:
 
-            print ("\n")
-            print ("q =", b / a)
+                print ("\n")
+                print ("an =", a * n ** (b-1) )
 
-            # Voltar ou Sair:
+                # Voltar ou Sair:
 
-            voltar_sair()
-            n = input ()
-            if n == "2":
-                msg_adeus()
+                voltar_sair()
+                a = input ()
+                if a == "3":
+                    msg_adeus()
+                    break
+                elif a == "2":
+                    break
+                elif a == "1":
+                    n = "1"
+
+    # Razão da progressão (q):
+
+    elif n == "2":
+        while n == "2":
+            if a == "m" or a == "s" or b == "m" or b == "s" or n == "m" or n == "s" or a == "3" or a == "2":
                 break
-    
-    # Soma geral FINITA dos termos da progressão (Sn):
-
-    elif n == "3":
-        
-        # Entrada:
-
-        print ("\n")
-        print ("*para sair, entre com 's'* \nInforme-me"); print ("\n")
-        while True:
-            try:        
-                a = input ("1º termo da progressão (a1): ")
-                if a == "s":
-                    break
-                if a == "m":
-                    break
-                else:
-                    a = float(a)
-                    break
-            except ValueError or TypeError:
-                print ("Entre com números!")
-                if a == "s":
-                    break
-        if a == "s":
-            msg_adeus()
-            break
-        if a == "m":
-            continue
-        while a != "m":
+            # Entrada:
+            informe()
             while True:
-                try:
-                    b = input ("Razão da progressão (q): ")
-                    if b == "s":
+                try:        
+                    b = input ("Algum termo da progressão (an): ")
+                    if b == "s" or b == "m":
                         break
                     else:
                         b = float(b)
                         break
                 except ValueError or TypeError:
                     print ("Entre com números!")
-                    if b == "s":
+                    if b == "s" or b == "m":
                         break
             if b == "s":
-                msg_adeus
+                msg_adeus()
                 break
-            if b == "m":
+            if b != "m":
+                while True:
+                    try:        
+                        a = input ("Termo anterior (an - 1): ")
+                        if a == "s" or a == "m":
+                            break
+                        else:
+                            a = float(a)
+                            break
+                    except ValueError or TypeError:
+                        print ("Entre com números!")
+                        if a == "s" or a == "m":
+                            break
+                if a == "s":
+                    msg_adeus()
+                    break
+            if a != "m" and b != "m":
+                # Saída:
+
+                print ("\n")
+                print ("q =", b / a)
+
+                # Voltar ou Sair:
+
+                voltar_sair()
+                a = input ()
+                if a == "3":
+                    msg_adeus()
+                    break
+                elif a == "2":
+                    break
+                elif a == "1":
+                    n = "2"
+        
+    # Soma geral FINITA dos termos da progressão (Sn):
+
+    elif n == "3":
+        while n == "3":
+            if a == "m" or a == "s" or b == "m" or b == "s" or n == "m" or n == "s" or a == "3" or a == "2":
                 break
-        while b != "m":
+            # Entrada:
+
+            informe()
             while True:
-                try:
-                    n = input ("Quantidade de termos (n) da progressão: ")
-                    if n == "s":
+                try:        
+                    a = input ("1º termo da progressão (a1): ")
+                    if a == "s" or a == "m":
                         break
                     else:
-                        n = float(n)
+                        a = float(a)
                         break
                 except ValueError or TypeError:
                     print ("Entre com números!")
-                    if n == "s":
+                    if a == "s" or a == "m":
                         break
-            if n == "s":
-                msg_adeus
+            if a == "s":
+                msg_adeus()
                 break
-            if n == "m":
-                continue
-        while n != "m":
-            # Saída:
+            if a != "m":
+                while True:
+                    try:
+                        b = input ("Razão da progressão (q): ")
+                        if b == "s" or b == "m":
+                            break
+                        else:
+                            b = float(b)
+                            break
+                    except ValueError or TypeError:
+                        print ("Entre com números!")
+                        if b == "s" or b == "m":
+                            break
+                if b == "s":
+                    msg_adeus
+                    break
+            if a != "m" and b != "m":
+                while True:
+                    try:
+                        n = input ("Quantidade de termos (n) da progressão: ")
+                        if n == "s" or n == "m":
+                            break
+                        else:
+                            n = float(n)
+                            break
+                    except ValueError or TypeError:
+                        print ("Entre com números!")
+                        if n == "s" or n == "m":
+                            break
+                if n == "s":
+                    msg_adeus
+                    break
+            if a != "m" and b != "m" and n != "m":
+                # Saída:
 
-            print ("\n")
-            print ("Sn =", (a * (b ** n - 1)) / b - 1)
+                print ("\n")
+                try:
+                    print ("Sn =", (a * (b ** n - 1)) / b - 1)
+                except OverflowError:
+                    print ("Resultado grande demais, meu nobre :/")
+                # Voltar ou Sair:
 
-        # Voltar ou Sair:
-
-        voltar_sair()
-        n = input ()
-        if n == "2":
-            msg_adeus()
-            break
+                voltar_sair()
+                a = input ()
+                if a == "3":
+                    msg_adeus()
+                    break
+                elif a == "2":
+                    break
+                elif a == "1":
+                    n = "3"
 
     # Soma geral FINITA dos termos da progressão (Sn):
 
     elif n == "4":
+        while n == "4":
+            if a == "m" or a == "s" or b == "m" or b == "s" or n == "m" or n == "s" or a == "3" or a == "2":
+                break
+            # Entrada:
 
-        # Entrada:
-
-        print ("\n")
-        print ("*para sair, entre com 's'* \nInforme-me"); print ("\n")
-        while True:
-            try:        
-                a = input ("1º termo da progressão (a1): ")
-                if a == "s":
-                    break
-                elif a == "m":
-                    break
-                else:
-                    a = float(a)
-                    break
-            except ValueError or TypeError:
-                print ("Entre com números!")
-                if a == "s":
-                    break
-        if a == "s":
-            msg_adeus()
-            break
-        elif a == "m":
-            continue
-        while a != "m":
+            informe()
             while True:
-                try:
-                    b = input ("Razão da progressão (q): ")
-                    if b == "s":
+                try:        
+                    a = input ("1º termo da progressão (a1): ")
+                    if a == "s" or a == "m":
                         break
                     else:
-                        b = float(b)
+                        a = float(a)
                         break
                 except ValueError or TypeError:
                     print ("Entre com números!")
-                    if b == "s":
+                    if a == "s" or a == "m":
                         break
-            if b == "s":
+            if a == "s":
                 msg_adeus()
                 break
-            if b == "m":
-                continue
-        while b != "m":
-            # Saída:
+            if a != "m":
+                while True:
+                    try:
+                        b = input ("Razão da progressão (q): ")
+                        if b == "s" or b == "m":
+                            break
+                        else:
+                            b = float(b)
+                            break
+                    except ValueError or TypeError:
+                        print ("Entre com números!")
+                        if b == "s" or b == "m":
+                            break
+                if b == "s":
+                    msg_adeus()
+                    break
+            if a != "m" and b != "m":
 
-            print ("\n")
-            print ("s∞ =", a / 1 - b)
+                # Saída:
 
-        # Voltar ou Sair:
+                print ("\n")
+                print ("s∞ =", a / 1 - b)
 
-        voltar_sair()
-        n = input ()
-        if n == "2":
-            msg_adeus()
-            break
+                # Voltar ou Sair:
+
+                voltar_sair()
+                a = input ()
+                if a == "3":
+                    msg_adeus()
+                    break
+                elif a == "2":
+                    break
+                elif a == "1":
+                    n = "4"
