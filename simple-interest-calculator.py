@@ -10,17 +10,19 @@ print ("\n\nBem-vindo à Calculadora de Juros Simples do Raphael")
 # Menu de opções:
 
 while a != "s" and b != "s" and c != "s" and b != "3":
+    print ("\n")
     a = ""
     b = ""
     c = ""
-    print ("\n\nDesejas calcular: \n\n1) Juros (J) e Montante (M) \n2) Capital (C) \n3) Taxa em meses (i) \n4) Tempo (t) \n5) Sair \n\n")
+    print ("Desejas calcular: \n\n1) Juros (J) e Montante (M) \n2) Capital (C) \n3) Taxa percentual (i) \n4) Tempo em meses (t) \n5) Sair \n\n")
     a = input ()
-    while a != "1" and a != "2" and a != "3" and a != "4":
-        print ("\n\n*alternativa inválida*")
-        print ("\n\nDesejas calcular: \n\n1) Juros e Montante \n2) Capital (C) \n3) Taxa \n4) Tempo \n5) Sair\n\n")
+    while a != "1" and a != "2" and a != "3" and a != "4" and a != "5":
+        print ("\n*alternativa inválida*")
+        print ("Desejas calcular: \n\n1) Juros e Montante \n2) Capital (C) \n3) Taxa \n4) Tempo \n5) Sair\n\n")
         a = input ()
     if a == "5":
         msg_adeus()
+        break
 
     # Juros e Montante:
 
@@ -42,7 +44,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
         elif a != "m":
             while True:
                 try:
-                    b = input ("Taxa em meses (i): ")
+                    b = input ("Taxa percentual (i): ")
                     if b == "s" or b == "m":
                         break
                     else:
@@ -56,7 +58,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
         if a != "m" and  b != "m":
             while True:
                 try:
-                    c = input ("Tempo (t): ")
+                    c = input ("Tempo em meses (t): ")
                     if c == "s" or c == "m":
                         break
                     else:
@@ -73,7 +75,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
         if a != "m" and b != "m" and c != "m":
             c = (a * b * c)/100
             a = a + c
-            print ("J =", c, "\nM =", a)
+            print ("\nJ =", c, "\nM =", a)
             
             # Voltar, Continuar ou Sair:
 
@@ -107,7 +109,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
         elif a == "m":
             break
         elif a == "1":
-            print ("\n\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*Informe-me: \n\n")
+            print ("\n\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\nInforme-me: \n\n")
             while True:
                 try:
                     a = input ("Juros (J): ")
@@ -121,10 +123,10 @@ while a != "s" and b != "s" and c != "s" and b != "3":
             if a == "s":
                 msg_adeus()
                 break
-            if a == "1":
+            if a != "m":
                 while True:
                     try:
-                        b = input ("Tempo (t): ")
+                        b = input ("Taxa percentual (i): ")
                         if b == "s" or b == "m":
                             break
                         else:
@@ -138,7 +140,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
             if a != "m" and b != "m":
                 while True:
                     try:
-                        c = input ("Tempo (t): ")
+                        c = input ("Tempo em meses (t): ")
                         if c == "s" or c == "m":
                             break
                         else:
@@ -153,4 +155,204 @@ while a != "s" and b != "s" and c != "s" and b != "3":
 
                 # Cálculo/Resultado:
 
-                print ("Capital =", (100 * a) / (b * c))
+                print ("\nCapital =", (100 * a) / (b * c))
+
+                # Voltar/Continuar/Sair:
+
+                print ("\nDesejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
+                b = input ("\n")
+                while b != "1" and b != "2" and b != "3":
+                    print ("*alternativa inválida*")
+                    print ("Desejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
+                    b = input ("\n")
+                if b == "3":
+                    msg_adeus()
+                    break
+                elif b == "2":
+                    break
+                elif b == "1":
+                    a = "2"
+        elif a == "2":
+            print ("\nInforme-me:\n")
+            while True:
+                try:
+                    a = input ('Montante (M): ')
+                    if a == "s" or a == "m":
+                        break
+                    else:
+                        a = float(a)
+                        break
+                except ValueError or TypeError:
+                    print ("Entre com um número!")
+            if a == "s":
+                msg_adeus()
+                break
+            elif a != "m":
+                while True:
+                    try:
+                        b = input ("Juros (J): ")
+                        if b == "s" or b == "m":
+                            break
+                        else:
+                            b = float(b)
+                            break
+                    except ValueError or TypeError:
+                        print ("Entre com números!")
+                if b == "s":
+                    msg_adeus()
+                    break
+                elif a != "m" and b != "m":
+
+                    # Cálculo/Resultado:
+
+                    print ("\nC =", a - b )
+
+                    # Voltar/Sair:
+
+                    print ("\nDesejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
+                    b = input ("\n")
+                    while b != "1" and b != "2" and b != "3":
+                        print ("*alternativa inválida*")
+                        print ("Desejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
+                        b = input ("\n")
+                    if b == "3":
+                        msg_adeus()
+                        break
+                    elif b == "2":
+                        break
+                    elif b == "1":
+                        a = "2"
+    
+    # Taxa percentual (i):
+
+    while a == "3":
+        print ("\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\nInforme-me: \n")
+        while True:
+            try:
+                a = input ("Juros (J): ")
+                if a == "s" or a == "m":
+                    break
+                else:
+                    a = float(a)
+                    break
+            except ValueError or TypeError:
+                print ("Entre com um número!")
+        if a == "s":
+            msg_adeus()
+            break
+        elif a != "m":
+            while True:
+                try:
+                    b = input ("Capital (C): ")
+                    if b == "s" or b == "m":
+                        break
+                    else:
+                        b = float(b)
+                        break
+                except ValueError or TypeError:
+                    print ("Entre com um número!")
+            if b == "s":
+                msg_adeus()
+                break
+            elif a != "m" and b != "m":
+                while True:
+                    try:
+                        c = input ("Tempo (t) em meses: ")
+                        if c == "s" or c == "m":
+                            break
+                        else:
+                            c = float(c)
+                            break
+                    except ValueError or TypeError:
+                        print ("Entre com um número!")
+                if c == "s":
+                    msg_adeus()
+                    break
+                if a != "m" and b != "m" and c != "m":
+
+                    # Cálculo/Resultado:
+
+                    print ("\ni =", a * 100 / (b * c), "(%)")
+
+                    # Voltar/Continuar/Sair:
+
+                    print ("\nDesejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
+                    b = input ("\n")
+                    while b != "1" and b != "2" and b != "3":
+                        print ("*alternativa inválida*")
+                        print ("Desejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
+                        b = input ("\n")
+                    if b == "3":
+                        msg_adeus()
+                        break
+                    elif b == "2":
+                        break
+                    elif b == "1":
+                        a = "3"
+
+    # Tempo (t) em meses:
+
+    while a == "4":
+        print ("\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\nInforme-me: \n")
+        while True:
+            try:
+                a = input ("Juros (J): ")
+                if a == "s" or a == "m":
+                    break
+                else:
+                    a = float(a)
+                    break
+            except ValueError or TypeError:
+                print ("Entre com um número!")
+        if a == "s":
+            msg_adeus()
+            break
+        elif a != "m":
+            while True:
+                try:
+                    b = input ("Capital (C): ")
+                    if b == "s" or b == "m":
+                        break
+                    else:
+                        b = float(b)
+                        break
+                except ValueError or TypeError:
+                    print ("Entre com um número!")
+            if b == "s":
+                msg_adeus()
+                break
+            elif a != "m" and b != "m":
+                while True:
+                    try:
+                        c = input ("Taxa percentual (i): ")
+                        if c == "s" or c == "m":
+                            break
+                        else:
+                            c = float(c)
+                            break
+                    except ValueError or TypeError:
+                        print ("Entre com um número!")
+                if c == "s":
+                    msg_adeus()
+                    break
+                elif a != "m" and b != "m" and c != "m":
+
+                    # Cálculo/Resultado:
+
+                    print ("\nt =", a * 100 / (b * c), "mes(es)")
+
+                    # Continuar/Voltar/Sair:
+
+                    print ("\nDesejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
+                    b = input ("\n")
+                    while b != "1" and b != "2" and b != "3":
+                        print ("*alternativa inválida*")
+                        print ("Desejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
+                        b = input ("\n")
+                    if b == "3":
+                        msg_adeus()
+                        break
+                    elif b == "2":
+                        break
+                    elif b == "1":
+                        a = "4"
