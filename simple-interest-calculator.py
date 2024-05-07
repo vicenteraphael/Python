@@ -5,7 +5,7 @@ a = ""
 b = ""
 c = ""
 
-print ("\n\nBem-vindo à Calculadora de Juros Simples do Raphael")
+print ("\nBem-vindo(a) à Calculadora de Juros Simples do Raphael")
 
 # Menu de opções:
 
@@ -24,7 +24,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
         msg_adeus()
         break
 
-    # Juros e Montante:
+    # Juros (J) e Montante (M):
 
     while a == "1":
         print ("\n\n*Para sair, entre com 's' \nPara voltar ao Menu de Opções, entre com 'm'* \n\nInforme-me:"); print ("\n")
@@ -77,15 +77,13 @@ while a != "s" and b != "s" and c != "s" and b != "3":
             a = a + c
             print ("\nJ =", c, "\nM =", a)
             
-            # Voltar, Continuar ou Sair:
+            # Continuar/Voltar/Sair:
 
             print ("\n\nDesejas: \n\n1) Continuar \n2) Voltar ao Menu de opções \n3) Sair \n\n")
             b = input ()
             while b != "1" and b != "2" and b != "3":
                 print ("\n\n*alternativa inválida*\nDesejas: \n\n1) Continuar \n2) Voltar ao Menu de opções \n3) Sair")
                 b = input ()
-                if b == "3":
-                    break
             if b == "3":
                 msg_adeus()
                 break
@@ -94,10 +92,10 @@ while a != "s" and b != "s" and c != "s" and b != "3":
             elif b == "1":
                 a = "1"
 
-    # Capital:
+    # Capital (C):
 
     while a == "2":
-        print ("\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\nVocê sabe o valor de(o): \n\n1) Juros (J), Taxa (i), Tempo (t)  \n2) Montante \n\n")
+        print ("\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\n\nVocê prefere calcular a partir do valor de: \n\n1) Juros (J), Taxa (i), Tempo (t)  \n2) Montante (M) e Juros (J)\n\n")
         a = input ("")
         while a != "1" and a != "2" and a != "s" and a != "m":
             print ("\n*alternativa inválida*\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\nVocê sabe o valor de(o): \n\n1) Juros (J), Taxa (i), Tempo (t)  \n2) Montante \n\n")
@@ -109,6 +107,9 @@ while a != "s" and b != "s" and c != "s" and b != "3":
         elif a == "m":
             break
         elif a == "1":
+
+            # A partir de: Juros (J) , Taxa (i) e Tempo (t):
+
             print ("\n\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\nInforme-me: \n\n")
             while True:
                 try:
@@ -155,9 +156,9 @@ while a != "s" and b != "s" and c != "s" and b != "3":
 
                 # Cálculo/Resultado:
 
-                print ("\nCapital =", (100 * a) / (b * c))
+                print ("\nC =", (100 * a) / (b * c))
 
-                # Voltar/Continuar/Sair:
+                # Continuar/Voltar/Sair:
 
                 print ("\nDesejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
                 b = input ("\n")
@@ -172,6 +173,9 @@ while a != "s" and b != "s" and c != "s" and b != "3":
                     break
                 elif b == "1":
                     a = "2"
+
+        # A partir de: Montante (M) e Juros (J):
+
         elif a == "2":
             print ("\nInforme-me:\n")
             while True:
@@ -207,7 +211,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
 
                     print ("\nC =", a - b )
 
-                    # Voltar/Sair:
+                    # Continuar/Voltar/Sair:
 
                     print ("\nDesejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
                     b = input ("\n")
@@ -226,7 +230,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
     # Taxa percentual (i):
 
     while a == "3":
-        print ("\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\nInforme-me: \n")
+        print ("\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\n\nInforme-me: \n")
         while True:
             try:
                 a = input ("Juros (J): ")
@@ -274,7 +278,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
 
                     print ("\ni =", a * 100 / (b * c), "(%)")
 
-                    # Voltar/Continuar/Sair:
+                    # Continuar/Voltar/Sair:
 
                     print ("\nDesejas: \n\n1) Continuar \n2) Voltar ao menu de opções \n3) Sair")
                     b = input ("\n")
@@ -293,7 +297,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
     # Tempo (t) em meses:
 
     while a == "4":
-        print ("\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\nInforme-me: \n")
+        print ("\n*para sair, entre com 's' \npara voltar ao Menu de opções, entre com 'm'*\n\nInforme-me: \n")
         while True:
             try:
                 a = input ("Juros (J): ")
