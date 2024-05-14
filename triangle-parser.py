@@ -19,7 +19,7 @@ msg_adeus
 
 def msg_erro():
     print ("\n")
-    print ("*entre com números*"); print ("\n")
+    print ("*entre com números*")
 def msg_adeus():
     print ("\n")
     print ("Adeus!")
@@ -27,7 +27,7 @@ def msg_adeus():
 # Boas-vindas:
 
 print ("\n")
-print ("Bem-vindo à Calculadora Trigonométrica do Raphael"); print ("\n")
+print ("Bem-vindo(a) à Calculadora Trigonométrica do Raphael"); print ("\n")
 print ("Pressione 'Enter' para continuar \nPara sair, digite 's'"); print ("\n")
 a = input ()
 if a == "s":

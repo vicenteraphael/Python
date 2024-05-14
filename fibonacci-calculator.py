@@ -1,44 +1,47 @@
 """"
 Variáveis:
-cont = variável contadora
-num = termo n da sequência
-ant = antecessor de num
-antsuc = antecessor sucessivo de num
+a = variável contadora
+b = termo n da sequência
+c = antecessor de b
+n = antecessor sucessivo de b
 """
 
 # Boas-vindas:
 
 print ("\n")
-print ("Bem-vindo à Calculadora de Fibonacci do Raphael"); print ("\n")
-print ("Para iniciar, pressione 'Enter' \nPara sair, digite 's'"); print ("\n")
-cont = input ()
-if cont == "s":
-    print ("\n")
-    print ("Adeus!")
-while cont != "s":
+print ("Bem-vindo(a) à Calculadora de Fibonacci do Raphael")
+a = ""
+while a != "s":
 
     #Índice da sequência:
 
     print ("\n")
-    print ("Desejas ver a sequência de fibonacci exibida até qual termo? \n*para sair, digite 's'*"); print ("\n")
-    cont = input (); print ("\n")
-    if cont == "s":
+    print ("Desejas que a sequência de fibonacci seja exibida até qual termo? \n*para sair, digite 's'*"); print ("\n")
+    a = input ()
+    if a == "s":
+        print ("\n")
         print ("Adeus!")
         break
-    while cont.isnumeric() == False:
-        print ("*Entre com um número inteiro*"); print ("\n")
-        cont = input (); print ("\n")
+    while a.isnumeric() == False:
+        print ("*Entre com um número inteiro*")
+        print ("Desejas que a sequência de fibonacci seja exibida até qual termo? \n*para sair, digite 's'*"); print ("\n")
+        a = input (); print ("\n")
+        if a == "s":
+            break
+    if a == "s":
+        print ("Adeus!")
+        break
 
     # Cálculo e Saída:
 
-    print ("Aqui está a sequência de Fibonacci exibida até o", cont,"º", "termo:"); print ("\n")
-    cont = int(cont)
-    num = 0
-    ant = 1
-    antsuc = 0
+    print ("Aqui está a sequência de Fibonacci exibida até o", a,"º", "termo:"); print ("\n")
+    a = int(a)
+    b = 0
+    c = 1
+    n = 0
     print ("1 º: 1")
-    for cont in range (2, cont + 1):
-        num = ant + antsuc
-        antsuc = ant
-        ant = num
-        print (cont,"º:",  num)
+    for a in range (2, a + 1):
+        b = c + n
+        n = c
+        c = b
+        print (a,"º:",  b)

@@ -30,7 +30,7 @@ def voltar_sair():
 
 # Boas vindas:
 
-print ("\nBem-vindo à Calculadora de Progressão Geométrica do Raphael"); print ("\n")
+print ("\nBem-vindo(a) à Calculadora de Progressão Geométrica do Raphael"); print ("\n")
 print ("Para continuar, pressione 'Enter' \nPara sair, digite 's'"); print ("\n")
 n = input ()
 if n == "s":

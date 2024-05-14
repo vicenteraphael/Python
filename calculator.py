@@ -8,7 +8,7 @@ op2
 op3
 """
 print ("\n")
-print ("Bem-vindo à Calculadora do Raphael"); print ("\n")
+print ("Bem-vindo(a) à Calculadora do Raphael"); print ("\n")
 op3 = "="
 op1 = ""
 while op1 != "a":

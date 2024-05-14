@@ -49,7 +49,7 @@ while r != "s":
     e = 0
 
     print ("\n")
-    print ("Bem-vindo ao Trivia Quiz do Raphael"); print ("\n")
+    print ("Bem-vindo(a) ao Trivia Quiz do Raphael"); print ("\n")
     print ("Para iniciar, pressione 'Enter'\nPara sair, digite 's'"); print ("\n")
     r = input ()
     if r == "s":

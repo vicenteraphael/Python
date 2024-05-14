@@ -15,16 +15,17 @@ def msg_adeus():
 # Boas-vindas:
 
 print ("\n")
-print ("Bem-vindo à Calculadora de Raízes de Equações Quadráticas do Raphael Vicente"); print ("\n")
+print ("Bem-vindo(a) à Calculadora de Raízes de Equações Quadráticas do Raphael"); print ("\n")
 print ("Pressione 'Enter' para continuar \nPara sair, digite 's'"); print ("\n")
-a = input(); print ("\n"); print ("\n")
+a = input()
 if a == "s":
+    print ("\n")
     print ("Adeus!")
 
 # Entrada dos Coeficientes:   
 
 while a != "s":
-    print ("Entre com os números dos coeficientes: \n*para sair, digite 's'*"); print ("\n")
+    print ("Entre com os números dos coeficientes: \n*para sair, entre com 's'*"); print ("\n")
     while True:
         try:
             a = input ("a = ")

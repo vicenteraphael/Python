@@ -1,7 +1,7 @@
 """
 Variáveis e Funções:
-tab = tabuada desejada
-index = indíce da tabuada (até quando parar a multiplicação)
+a = tabuada desejada
+b = indíce da tabuada (até quando parar a multiplicação)
 msg_adeus()
 """
 
@@ -11,61 +11,61 @@ def msg_adeus():
 # Boas-vindas:
 
 print ("\n")
-print ("Bem-vindo à Calculadora de Tabuada do Raphael."); print ("\n")
+print ("Bem-vindo(a) à Calculadora de tabuada do Raphael"); print ("\n")
 print ("Para iniciar, pressione 'Enter' \nPara sair, digite 's'"); print ("\n")
-tab = input (); print ("")
-if tab == "s":
+a = input (); print ("")
+if a == "s":
     msg_adeus()
-while tab != "s":
+while a != "s":
 
     #Número para tabuada:
 
-    print ("*para sair, digite 's'* \nInforme-me:"); print ("\n")
+    print ("*para sair, entre com 's'* \nInforme-me:"); print ("\n")
     while True:
         try:
-            tab = input("Qual será o número para a tabuada: "); print ("\n")
-            if tab == "s":
+            a = input("Qual será o número para a tabuada: "); print ("\n")
+            if a == "s":
                 break
             else:
-                tab = float(tab)
+                a = float(a)
                 break
         except ValueError or TypeError:
-            print ("Entre com um número! \n*para sair, digite 's'*"); print ("\n")
-            if tab == "s":
+            print ("Entre com um número! \n*para sair, digite 's'*")
+            if a == "s":
                 break
-    if tab == "s":
+    if a == "s":
         msg_adeus()
         break
 
     # Índice da tabuada:
 
-    index = input ("Qual será o índice da tabuada: ")
-    if index == "s":
+    b = input ("Qual será o índice da tabuada: ")
+    if b == "s":
         msg_adeus()
         break
-    while index.isnumeric() == False:
+    while b.isnumeric() == False:
         print ("\n")
-        index = input ("Entre com um número inteiro! \nQual será o índice da tabuada: ")
-        if index == "s":
+        b = input ("Entre com um número inteiro! \nQual será o índice da tabuada: ")
+        if b == "s":
             break
-    if index == "s":
+    if b == "s":
         msg_adeus()
         break
-    index = int(index) + 1
+    b = int(b) + 1
 
     # Resultado:
 
     print ("\n")
-    print ("Tabuada do", tab, "de 1 até", index,":"); print ("\n")
-    for index in range (1, index):
-        print (tab,"*",index,"=", tab * index)
+    print ("tabuada do", a, "de 1 até", b,":"); print ("\n")
+    for b in range (1, b):
+        print (a,"*",b,"=", a * b)
     print ("\n")
 
     # Sair ou voltar ao Menu Inicial:
 
     print ("Pressione 'Enter' para continuar \nPara sair, digite 's'"); print ("\n")
-    tab = input ()
-    if tab == "s":
+    a = input ()
+    if a == "s":
         msg_adeus()
         break
     print ("\n")

@@ -17,7 +17,7 @@ def msg_adeus():
 # Boas-Vindas
 
 print ("\n")
-print ("Bem-vindo à Calculadora de Progressão Aritmética do Raphael"); print ("\n")
+print ("Bem-vindo(a) à Calculadora de Progressão Aritmética do Raphael"); print ("\n")
 print ("Para inciar, pressione 'Enter' \nPara sair, digite 's'"); print ("\n")
 n = input ()
 if n == "s":
