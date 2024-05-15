@@ -8,6 +8,7 @@ print ("\nBem-vindo(a) à Calculadora de Juros Compostos do Raphael\n")
 a = ""
 b = ""
 c = ""
+n = ""
 
 while a != "s" and b != "s" and b != "3" and c != "s":
     a = ""
@@ -70,8 +71,21 @@ while a != "s" and b != "s" and b != "3" and c != "s":
                 elif a != "m" and b != "m" and c != "m":
 
                     # Cálculo/Resultado:
-
-                    print ("\nM =", a * (b + 1) ** c, "\nJ =", (a * (b + 1) ** c ) - a)
+                    if a < 0 or b < 0 or c < 0:
+                        print ("\nNão seja assim, amigo, inserir valores negativos no contexto de cálculo de juros é bastante vergonhoso...")
+                    elif a == 0 and b == 0 and c == 0:
+                        print ("\nse você já sabe o resultado; então pra que gastar seu tempo, a CPU desta máquina e a energia elétrica do mundo?")
+                    elif a == 0:
+                        print ("\nNeste momento eu imagino que você esteja sendo investigado pelo FBI e sendo procurado em 17364594 países diferentes. O cara investiu R$ 0,00 e tá querendo lucrar...")
+                    elif b == 0 and c > 0:
+                        print ("\nhmmmm... pelo visto, com este negócio, você perderá", c, "mes(es) da sua vida e", a, "R$ do seu bolso..." )
+                    elif c == 0 and b > 0:
+                        print ("\nPaciência, amigo, querer que o dinheiro renda instantâneamente é como querer que caia do céu uma figurinha do Neymar... \nInvista um pouco mais de tempo, depois venha falar comigo...")
+                    elif b == 0 and c == 0:
+                        print ("\nMas que bela de uma aplicação... com ela você acaba de perder", a,"R$ do seu bolso... Parabéns!")
+                    
+                    else:
+                        print ("\nM =", a * (b + 1) ** c, "\nJ =", (a * (b + 1) ** c ) - a)
 
                     # Continuar/Voltar/Sair
 
@@ -325,8 +339,16 @@ while a != "s" and b != "s" and b != "3" and c != "s":
                 elif a != "m" and b != "m" and c != "m":
 
                     # Cálculo/Resultado:
-
-                    print ("\ni =", (a / b) ** (1 / c) - 1, "%")
+                    if a == 0 and b == 0 and c == 0:
+                        print ("\nse você já sabe o resultado; então pra que gastar seu tempo, a CPU desta máquina e a energia elétrica do mundo?")
+                    if b > a or b == a:
+                        print ("\nVamos a uma pequena ponderação matemática: se M = J + C \n(e J e C são números reais positivos, logicamente), \nentão, necessariamente J < M e C < M \n(exceto o caso em que J = 0 e C = 0 e, então, M = J = C. Mas isto é um absurdo em tratando-se de cálculo de juros... ou você espera investir R$ 0,00 e receber algum lucro?) \nAchou que eu ia deixar passar esta, né?")
+                    if a < 0 or b < 0 or a < 0:
+                        print ("Não seja assim, amigo, inserir valores negativos neste contexto é vergonhoso...")
+                    if c == 0 and b > 0 and a > 0:
+                        print ("\nNão me faça rir! Dizer que o dinheiro rendeu instantâneamente é conversa para boi dormir...")
+                    else:
+                        print ("\ni =", (a / b) ** (1 / c) - 1, "%")
 
                     # Continuar/Voltar/Sair
 
@@ -391,17 +413,30 @@ while a != "s" and b != "s" and b != "3" and c != "s":
                 elif a != "m" and b != "m" and c != "m":
 
                     # Cálculo/Resultado:
-                    
-                    a /= b
-                    b = 0
-                    c += 1
-                    n = c
-                    while c <= a:
-                        b += 1
-                        c *= n
-                    if c % a != 0:
-                        b += 1
-                    print ("\nt =", b, "mes(es)")
+
+                    if a < 0 or b < 0 or c < 0:
+                        print ("\nNão seja assim, amigo, inserir valores negativos neste contexto é vergonhoso...")
+                    elif c == 0 and b > 0 and a == 0:
+                        print ("\nhmmmm... pelo visto, nesta sua aplicação... você perdeu", b, "R$ do seu bolso...")
+                    elif a == 0 and b == 0 and c == 0:
+                        print ("\nse você já sabe o resultado; então pra que gastar seu tempo, o meu tempo, a CPU desta máquina e a energia elétrica do mundo?")
+                    elif b > a or b == a:
+                        print ("\nVamos a uma pequena ponderação matemática: se M = J + C \n(e J e C são números reais positivos, logicamente), \nentão, necessariamente J < M e C < M \n(exceto o caso em que J = 0 e C = 0 e, então, M = J = C. Mas isto é um absurdo em tratando-se de cálculo de juros... ou você espera investir R$ 0,00 e receber algum lucro?) \nAchou que eu ia deixar passar esta, né?")
+                    elif c == 0 and b > 0 and a > 0:
+                        print ("\nhmmmm... pelo visto, nesta sua aplicação... você perdeu", b, "R$ do seu bolso... Aliás, que droga você consumiu para obter um valor para o montante?")
+                    elif b == 0 and c == 0 and a > 0:
+                        print ("\nNão me faça rir! Dizer que o dinheiro rendeu instantâneamente é conversa para boi dormir...")
+                    else:
+                        a /= b
+                        b = 0
+                        c += 1
+                        n = c
+                        while c <= a:
+                            b += 1
+                            c *= n
+                        if c % a != 0:
+                            b += 1
+                        print ("\nt ≅", b, "mes(es) \n\nPerdão pelo valor aproximado... Ainda não consegui fazer o programa resolver equações exponenciais de forma perfeita...")
 
                     # Continuar/Voltar/Sair
 
