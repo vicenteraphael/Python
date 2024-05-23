@@ -76,9 +76,9 @@ while a != "s" and b != "s" and b != "3" and c != "s":
                     elif a == 0 and b == 0 and c == 0:
                         print ("\nse você já sabe o resultado; então pra que gastar seu tempo, a CPU desta máquina e a energia elétrica do mundo?")
                     elif a == 0:
-                        print ("\nNeste momento eu imagino que você esteja sendo investigado pelo FBI e sendo procurado em 17364594 países diferentes. O cara investiu R$ 0,00 e tá querendo lucrar...")
+                        print ("\nNeste momento eu imagino que você esteja sendo investigado pelo FBI e sendo procurado em 17364594 países diferentes. O cara investiu R$ 0.00 e tá querendo lucrar...")
                     elif b == 0 and c > 0:
-                        print ("\nhmmmm... pelo visto, com este negócio, você perderá", c, "mes(es) da sua vida e", a, "R$ do seu bolso..." )
+                        print ("\nhmmmm... Segundo meus cálculos... com este negócio, você investe R$", a, "e perde", c, "meses da sua vida..." )
                     elif c == 0 and b > 0:
                         print ("\nPaciência, amigo, querer que o dinheiro renda instantâneamente é como querer que caia do céu uma figurinha do Neymar... \nInvista um pouco mais de tempo, depois venha falar comigo...")
                     elif b == 0 and c == 0:
@@ -162,7 +162,21 @@ while a != "s" and b != "s" and b != "3" and c != "s":
 
                         # Cálculo/Resultado:
 
-                        print ("\nC =", a / (1 + b) ** c)
+                        if a < 0 or b < 0 or c < 0:
+                            print ("\nNão seja assim, amigo, inserir valores negativos neste contexto é bastante vergonhoso...")
+                        elif b == 0 and a > 0 and c > 0:
+                            print ("\nVocê investiu", a / (1 + b) ** c, "R$ e perdeu", c, "me(es) da sua vida, mas que belo negócio!")
+                        elif c == 0 and a > 0:
+                            print ("\nNão me faça rir... Dizer que o dinheiro rendeu instantâneamente é conversa para boi dormir...")
+                        elif a == 0 and b == 0 or a == 0 and c == 0:
+                            print ("\nEspera... é muita coisa pra eu processar... Você aplicou R$ 0.00... em uma taxa de", b, "%... esperou por", c, "mes(es)... E ainda queria que isso tivesse rendido alguma coisa!? \nE AGORA TÁ CHECANDO PRA VER SE NÃO FOI ENGANADO...")
+                        elif a == 0 and b == 0 and c == 0:
+                            print ("\nOs possíveis valores para o seu capital são infinitos!")
+                        else:
+                            try:
+                                print ("\nC =", a / (1 + b) ** c)
+                            except OverflowError:
+                                print ("\nPor favor, caro usuário. Não insira valores estrondosos, pois excede o limite de caracteres suportado ;)")
 
                         # Continuar/Voltar/Sair:
 
@@ -224,8 +238,24 @@ while a != "s" and b != "s" and b != "3" and c != "s":
                     elif a != "m" and b != "m" and c != "m":
 
                         # Cálculo/Resultado:
-
-                        print ("\nC =", a / (((1 + b) ** c) - 1))
+                        
+                        if a < 0 or b < 0 or c < 0:
+                            print ("\nNão seja assim, amigo, inserir valores negativos neste contexto é bastante vergonhoso...")
+                        elif a == 0 and b == 0 and c == 0:
+                            print ("\nOs possíveis valores para o seu capital são infinitos!")
+                        elif c == 0 and a > 0:
+                            print ("\nNão me faça rir... Dizer que o dinheiro rendeu instantâneamente é conversa para boi dormir...")
+                        elif a == 0 and b > 0 or a == 0 and c > 0:
+                            print ("\nEspera... é muita coisa pra eu processar... Você aplicou", a ,"R$... em uma taxa de", b, "%... esperou por", c, "mes(es)... E ainda queria que isso tivesse rendido alguma coisa!? \nE AGORA TÁ CHECANDO PRA VER SE NÃO FOI ENGANADO...")
+                        elif a > 0 and b == 0 or a > 0 and c == 0:
+                            print ("\nEspera... é muita coisa pra eu processar... Você aplicou", a ,"R$... em uma taxa de", b, "%... esperou por", c, "mes(es)... E ainda queria que isso tivesse rendido alguma coisa!? \nE AGORA TÁ CHECANDO PRA VER SE NÃO FOI ENGANADO...")
+                        elif a == 0 and c == 0 or a == 0 and b == 0:
+                            print ("\nEspera... é muita coisa pra eu processar... Você aplicou R$ 0.00... em uma taxa de", b, "%... esperou por", c, "mes(es)... E ainda queria que isso tivesse rendido alguma coisa!? \nE AGORA TÁ CHECANDO PRA VER SE NÃO FOI ENGANADO...")
+                        else:
+                            try:
+                                print ("\nC =", a / (((1 + b) ** c) - 1))
+                            except OverflowError:
+                                print ("\nPor favor, caro usuário. Não insira valores estrondosos, pois excede o limite de caracteres suportado ;)")
 
                         # Continuar/Voltar/Sair:
 
@@ -273,8 +303,16 @@ while a != "s" and b != "s" and b != "3" and c != "s":
                 elif a != "m" and b != "m":
 
                     # Cálculo/Resultado:
-
-                    print ("\nC =", a - b)
+                    
+                    if a < 0 or b < 0:
+                        print ("\nNão seja assim, amigo, inserir valores negativos neste contexto é bastante vergonhoso...")
+                    elif b > a or b == 0:
+                        print ("\nBom, vamos a uma dissertação matemática. Sendo M = J + C e todos os valores são números reais positivos, logicamente. \nEntão, necessariamente, J < M e C < M (exceto pelo caso em que J = 0 e/ou C = 0 e, então, J = M e/ou C = M, respectivamente. Mas isto é um absurdo em tratando-se de cálculo de juros!). Achou que eu ia deixar esta passar, né?")
+                    else:
+                        try:
+                            print ("\nC =", a - b)
+                        except OverflowError:
+                            print ("\nPor favor, caro usuário. Não insira valores estrondosos, pois excede o limite de caracteres suportado ;)")
 
                     # Continuar/Voltar/Sair:
 
@@ -339,16 +377,26 @@ while a != "s" and b != "s" and b != "3" and c != "s":
                 elif a != "m" and b != "m" and c != "m":
 
                     # Cálculo/Resultado:
-                    if a == 0 and b == 0 and c == 0:
-                        print ("\nse você já sabe o resultado; então pra que gastar seu tempo, a CPU desta máquina e a energia elétrica do mundo?")
-                    if b > a or b == a:
-                        print ("\nVamos a uma pequena ponderação matemática: se M = J + C \n(e J e C são números reais positivos, logicamente), \nentão, necessariamente J < M e C < M \n(exceto o caso em que J = 0 e C = 0 e, então, M = J = C. Mas isto é um absurdo em tratando-se de cálculo de juros... ou você espera investir R$ 0,00 e receber algum lucro?) \nAchou que eu ia deixar passar esta, né?")
+                    
                     if a < 0 or b < 0 or a < 0:
-                        print ("Não seja assim, amigo, inserir valores negativos neste contexto é vergonhoso...")
-                    if c == 0 and b > 0 and a > 0:
+                        print ("\nNão seja assim, amigo, inserir valores negativos neste contexto é vergonhoso...")
+                    elif a == 0 and b == 0 and c == 0:
+                        print ("\nOs valores possíveis para a sua taxa são infinitos!")
+                    elif a == 0 and b == 0 and c > 0:
+                        print ("\nhmmm... pelo visto... na sua aplicação... você perdeu", c, "mes(es) da sua vida...")
+                    elif b > a or b == a:
+                        print ("\nBom, vamos a uma dissertação matemática. Sendo M = J + C e todos os valores são números reais positivos, logicamente. \nEntão, necessariamente, J < M e C < M (exceto pelo caso em que J = 0 e/ou C = 0 e, então, J = M e/ou C = M, respectivamente. Mas isto é um absurdo em tratando-se de cálculo de juros!). Achou que eu ia deixar esta passar, né?")
+                    elif c == 0 and b > 0 and a > 0:
                         print ("\nNão me faça rir! Dizer que o dinheiro rendeu instantâneamente é conversa para boi dormir...")
+                    elif a > 0 and b == 0 or a > 0 and c == 0:
+                        print ("\nNão me faça rir! Dizer que o dinheiro rendeu instantâneamente é conversa para boi dormir...")
+                    elif b == 0 and c > 0 or b == 0 and c == 0:
+                        print ("hmmm... Então quer dizer que você aplicou R$ 0.00... esperou por", c, "meses... E ainda esperou que o dinheiro fosse render alguma coisa!? E AGORA TÁ CHECANDO PRA VER SE NÃO FOI ENGANADO!...")
                     else:
-                        print ("\ni =", (a / b) ** (1 / c) - 1, "%")
+                        try:
+                            print ("\ni =", (a / b) ** (1 / c) - 1, "%")
+                        except OverflowError:
+                            print ("\nPor favor, caro usuário. Não insira valores estrondosos, pois excede o limite de caracteres suportado ;)")
 
                     # Continuar/Voltar/Sair
 
@@ -416,16 +464,16 @@ while a != "s" and b != "s" and b != "3" and c != "s":
 
                     if a < 0 or b < 0 or c < 0:
                         print ("\nNão seja assim, amigo, inserir valores negativos neste contexto é vergonhoso...")
-                    elif c == 0 and b > 0 and a == 0:
-                        print ("\nhmmmm... pelo visto, nesta sua aplicação... você perdeu", b, "R$ do seu bolso...")
-                    elif a == 0 and b == 0 and c == 0:
-                        print ("\nse você já sabe o resultado; então pra que gastar seu tempo, o meu tempo, a CPU desta máquina e a energia elétrica do mundo?")
-                    elif b > a or b == a:
-                        print ("\nVamos a uma pequena ponderação matemática: se M = J + C \n(e J e C são números reais positivos, logicamente), \nentão, necessariamente J < M e C < M \n(exceto o caso em que J = 0 e C = 0 e, então, M = J = C. Mas isto é um absurdo em tratando-se de cálculo de juros... ou você espera investir R$ 0,00 e receber algum lucro?) \nAchou que eu ia deixar passar esta, né?")
+                    elif a == 0 and b == 0:
+                        print ("\nOs possíveis valores para o tempo são infinitos!")
+                    elif b > a or a == b:
+                        print ("\nBom, vamos a uma dissertação matemática. Sendo M = J + C e todos os valores são números reais positivos, logicamente. \nEntão, necessariamente, J < M e C < M (exceto pelo caso em que J = 0 e/ou C = 0 e, então, J = M e/ou C = M, respectivamente. Mas isto é um absurdo em tratando-se de cálculo de juros!). Achou que eu ia deixar esta passar, né?")
+                    elif b == 0 and a > 0 and c == 0:
+                        print ("\nwtf, bro?! tá farmando dinheiro, é?")
                     elif c == 0 and b > 0 and a > 0:
-                        print ("\nhmmmm... pelo visto, nesta sua aplicação... você perdeu", b, "R$ do seu bolso... Aliás, que droga você consumiu para obter um valor para o montante?")
-                    elif b == 0 and c == 0 and a > 0:
-                        print ("\nNão me faça rir! Dizer que o dinheiro rendeu instantâneamente é conversa para boi dormir...")
+                        print ("\nNão me faça rir! Dizer que o dinheiro rendeu instantâneamente é conversa para boi dormir... Perdão! Quase peguei no sono... Não, Pera!...")
+                    elif b == 0 and a > 0:
+                        print ("\nNão me faça rir! Investir R$ 0.00 e dizer que isso rendeu alguma coisa é conversa para boi dormir... Perdão! Quase peguei no sono... Não, Pera!...")
                     else:
                         a /= b
                         b = 0

@@ -89,9 +89,12 @@ while a != "s" and b != "s" and c != "s" and b != "3":
             elif a < 0 or b < 0 or c < 0:
                 print ("\nNão seja assim, amigo, é muito vergonhoso aplicar valores negativos no contexto de cálculo de juros...")
             else:
-                c = (a * b * c)/100
-                a = a + c
-                print ("\nJ =", c, "\nM =", a)
+                try:
+                    c = (a * b * c)/100
+                    a = a + c
+                    print ("\nJ =", c, "\nM =", a)
+                except OverflowError:
+                    print ("\nPor favor, caro usuário. Não insira valores estrondosos, pois excede o limite de caracteres suportado ;)")
             
             # Continuar/Voltar/Sair:
 
@@ -175,7 +178,7 @@ while a != "s" and b != "s" and c != "s" and b != "3":
                 if a < 0 or b < 0 or c < 0:
                     print ("\nNão seja assim, amigo, é muito vergonhoso aplicar valores negativos neste contexto...")
                 elif c == 0 and a > 0 or b == 0 and a > 0:
-                    print ("\nOpa, meu nobre, tentar descobrir o valor do capital sem que o mesmo tenha rendido é como desfazer um trabalho que ainda não foi feito... Os possíveis valores são infinitos!\nAliás, como que você obteu um valor para o juros, de qualquer maneira?")
+                    print ("\nOpa, meu nobre, tentar descobrir o valor do capital sem que o mesmo tenha rendido é como desfazer um trabalho que ainda não foi feito...\nAliás, como que você obteu um valor para o juros, de qualquer maneira?")
                 elif c == 0 and a == 0 and b > 0:
                     print ("\nOpa, meu nobre, tentar descobrir o valor do capital sem que o mesmo tenha rendido é como desfazer um trabalho que ainda não foi feito... Os possíveis valores são infinitos!")
                 elif b == 0 and a > 0:
@@ -184,12 +187,14 @@ while a != "s" and b != "s" and c != "s" and b != "3":
                     print ("\nContate o seu advogado! \nOu possivelmente houve um erro grotesco no processo da sua aplicação ou você está me zoando...\nCaso o segundo caso seja verdadeiro, saiba que eu me sinto realmente ofendido... VOU TE CANCELAR NO TWITTER HEHHEHHEHHEHEHEHEHEHEHEHEHEHEH")
                 elif a == 0 and b == 0 and c > 0:
                     print ("\nhmmmm... pelo visto, na sua aplicação, você perderá", c, "mes(es) da sua vida..." )
-                elif c > a or b/100 > a:
-                    print ("\nVamos a uma pequena ponderação matemática. Se J = (C * i * t) / 100 e todos os valores são números reais e positivos, logicamente. \nentão, necessáriamente: C < J (com a taxa e o tempo isto não ocorre, pois são grandezas diferentes). Achou que eu ia deixar essa passar, né?")
+
                 elif a == 0 and b == 0 and c == 0:
                     print ("\nOpa, meu nobre, tentar descobrir o valor do capital sem que o mesmo tenha rendido é como desfazer um trabalho que ainda não foi feito... Os possíveis valores são infinitos!")
                 else:
-                    print ("\nC =", (100 * a) / (b * c))
+                    try:
+                        print ("\nC =", (100 * a) / (b * c))
+                    except OverflowError:
+                        print ("\nPor favor, caro usuário. Não insira valores estrondosos, pois excede o limite de caracteres suportado ;)")
 
                 # Continuar/Voltar/Sair:
 
@@ -244,12 +249,15 @@ while a != "s" and b != "s" and c != "s" and b != "3":
 
                     if a < 0 or b < 0:
                         print ("\nNão seja assim, amigo, inserir valores negativos neste contexto é muito vergonhoso...")
-                    elif b > a:
-                        print ("\nUma pequena ponderação matemática: se M = J + C, então, necessariamente, J < M (exceto o caso em que C = 0, mas isto é um absurdo em tratando-se de cálculo de juros!). Achou que eu ia deixar essa passar, né?")
+                    elif b > a or b == a:
+                        print ("\nUma pequena ponderação matemática: se M = J + C, então, necessariamente, J < M e C < M (exceto o caso em que J = 0 e/ou C = 0 e, então, M = J e/ou M = C, respectivamente. mas isto é um absurdo em tratando-se de cálculo de juros!). Achou que eu ia deixar essa passar, né?")
                     elif b == a:
                         print ("\nBom, vamos a uma dissertação matemática. Sendo M = J + C e todos os valores são números reais positivos, logicamente. \no valor para c que satisfaz o caso em que M = J é C = 0 . Agora me diz, que diacho de aplicação foi essa que você fez?")
                     else:
-                        print ("\nC =", a - b )
+                        try:
+                            print ("\nC =", a - b )
+                        except OverflowError:
+                            print ("\nPor favor, caro usuário. Não insira valores estrondosos, pois excede o limite de caracteres suportado ;)")
 
                     # Continuar/Voltar/Sair:
 
@@ -315,9 +323,8 @@ while a != "s" and b != "s" and c != "s" and b != "3":
                 if a != "m" and b != "m" and c != "m":
 
                     # Cálculo/Resultado:
-                    if a > 0 and b > a:
-                        print ("\nVamos a uma pequena ponderação matemática. Se J = (C * i * t) / 100 e todos os valores são números reais e positivos, logicamente. \nEntão, necessáriamente: C < J (com a taxa e o tempo isto não ocorre, pois são grandezas diferentes). Achou que eu ia deixar essa passar, né?")
-                    elif a < 0 or b < 0 or c < 0:
+
+                    if a < 0 or b < 0 or c < 0:
                         print ("\nNão seja assim, amigo, é muito vergonhoso aplicar valores negativos neste contexto...")
                     elif a == 0 and b > 0 and c > 0:
                         print ("\nhmmmm... então quer dizer que você aplicou", b, "R$ e perdeu", c, "mes(es da sua vida... e ainda veio conferir se isto estava certo... taxa 0...)")
@@ -334,7 +341,10 @@ while a != "s" and b != "s" and c != "s" and b != "3":
                     elif c == 0 and a > 0:
                         print ("\nPaciência, amigo, querer que o dinheiro renda instantâneamente é como querer que caia do céu uma figurinha do Neymar... \nInvista um pouco mais de tempo, depois venha falar comigo...\nAliás, que tipo de droga você consumiu para obter", a, "como valor para o juros?")
                     else:
-                        print ("\ni =", a * 100 / (b * c), "(%)")
+                        try:
+                            print ("\ni =", a * 100 / (b * c), "(%)")
+                        except OverflowError:
+                                print ("\nPor favor, caro usuário. Não insira valores estrondosos, pois excede o limite de caracteres suportado ;)")
 
                     # Continuar/Voltar/Sair:
 
@@ -403,13 +413,15 @@ while a != "s" and b != "s" and c != "s" and b != "3":
                     if c == 0 and a > 0:
                         print ("\nNão me faça rir. Aplicar uma taxa de 0% e o dinheiro ter rendido alguma coisa é história para boi dormir... Perdão! Quase peguei no sono... Não, pera!")
                     elif c == 0 and a == 0:
-                        print ("\nRapaz, os valores possíveis para o tempo de sua aplicação são infinitos!")
-                    elif b > a:
-                        print ("\nVamos a uma pequena ponderação matemática. Se J = (C * i * t) / 100 e todos os valores são números reais e positivos, logicamente. \nEntão, necessáriamente: C < J (com a taxa e o tempo isto não ocorre, pois são grandezas diferentes). Achou que eu ia deixar essa passar, né?")
+                        print ("\nhmmmm... aposto que alguma vez alguém já te disse que na programação ou na matemática tudo há de ser certo, que não existe 'talvez'...\nBem, aqui está um caso bastante peculiar. Eu afirmo-te asseguradamente que não existe um valor certo para o tempo desta aplicação, qualquer valor confere. \nEla pode durar uma eternidade, até o palmeiras conquistar o mundial. Ou ela pode durar menos que 1/10000 de um segundo... \nAcredito que neste cenário é recorrente a teoria de relatividade geral de Albert Einstein; ou melhor, os aspectos mais intrínsecos do comportamento das partículas dentro do campo da mecânica quântica: \nnão há um parâmetro concreto para a posição de uma partícula, o que há é uma nuvem das possíveis possibiladades que aquela partícula pode assumir. \nMas aqui o caso é um pouco diferente: esta nuvem assume valores infinitos! É como pensar na totalidade do universo! Opss... espera! Esqueci de tomar os remédios...")
+
                     elif a < 0 or b < 0 or c < 0:
                         print ("\nNão seja assim, amigo, é vergonhoso aplicar valores negativos neste contexto...")
                     else:
-                        print ("\nt =", a * 100 / (b * c), "mes(es)")
+                        try:
+                            print ("\nt =", a * 100 / (b * c), "mes(es)")
+                        except OverflowError:
+                                print ("\nPor favor, caro usuário. Não insira valores estrondosos, pois excede o limite de caracteres suportado ;)")
 
                     # Continuar/Voltar/Sair:
 
