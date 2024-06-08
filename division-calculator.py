@@ -132,13 +132,14 @@ while a != "s" and a != "4":
                         print (_, "\n")
                     else:
                         print ("{}, ".format(_), end='')
+        a = "1"
     
     # Primos de uma sequência:
 
     while a == "2":
 
         n = []
-        print ("\n*para sair, entre com 's'. Para voltar ao menu inicial, entre com 'm'*\nInforme-me:\n\n")
+        print ("\n*para sair, entre com 's'. Para voltar ao menu inicial, entre com 'm'*\nInforme-me:\n")
         
         # Entrada:
         
@@ -212,6 +213,7 @@ while a != "s" and a != "4":
                     print (_)
                 else:
                     print ('{}, '.format(_), end='')
+        a = "2"
 
     # Máximo Divisor Comum (MDC):
 
@@ -312,6 +314,7 @@ while a != "s" and a != "4":
                     else:
                         print ("{}, ".format(_), end='')
                 print (" é {}".format(b[0]))
+        a = "3"
     
     # Mínimo Múltiplo Comum (MMC):
 
@@ -359,5 +362,6 @@ while a != "s" and a != "4":
             else:
                 print ("{}, ".format(a), end='')
         print (" é", int(_ * b[-1]))
+        a = "4"
         
 print ("\nAdeus!")
