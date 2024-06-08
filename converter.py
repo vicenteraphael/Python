@@ -177,7 +177,7 @@ while a != "s":
     # Hexadecimal para Binário:
 
     elif a == "4" and b == "2":
-        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nHexadecimal para Decimal:\n")
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nHexadecimal para Binário:\n")
         while True:
             a = input ("Nº: ")
             if a == "s" or a == "m":
