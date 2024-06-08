@@ -46,41 +46,158 @@ while a != "s":
 
     # Decimal para Binário:
 
-    while a == "1" and b == "2":
+    if a == "1" and b == "2":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nDecimal para Binário:\n")
         while True:
-            try:
-                a = input ("Nº: ")
-                if a == "s" or a == "m":
-                    break
-                a = int(a)
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
                 break
+            try:
+                print (a ,"=", format(int(a), "b"), "\n")
             except:
-                print ("Entre com um número!")
-        if a == "s":
-            break
-        print (a ,"=", format(a, "b"))
-
+                print ("\nEntre com um número!")
 
     # Decimal para Octal:
 
+    elif a == "1" and b == "3":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nDecimal para Octal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", format(int(a), "o"), "\n")
+            except:
+                print ("\nEntre com um número!")
+
     # Decimal para Hexadecimal:
+
+    elif a == "1" and b == "4":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nDecimal para Hexadecimal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", format(int(a), "X"), "\n")
+            except:
+                print ("\nEntre com um número!")
 
     # Binário para Decimal:
 
+    elif a == "2" and b == "1":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nBinário para Decimal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", int(a, 2), "\n")
+            except:
+                print ("\nEntre com um número binário!")
+    
     # Binário para Octal:
+
+    elif a == "2" and b == "3":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nBinário para Octal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", format(int(a, 2), "o"), "\n")
+            except:
+                print ("\nEntre com um número binário!")
 
     # Binário para Hexadecimal:
 
+    elif a == "2" and b == "4":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nBinário para Hexadecimal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", format(int(a, 2), "X"), "\n")
+            except:
+                print ("\nEntre com um número binário!")
+
     # Octal para Decimal:
 
+    elif a == "3" and b == "1":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nOctal para Decimal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", int(a, 8), "\n")
+            except:
+                print ("\nEntre com um número octal!")
+
     # Octal para Binário:
+    
+    elif a == "3" and b == "2":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nOctal para Binário:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", format(int(a, 8), "b"), "\n")
+            except:
+                print ("\nEntre com um número octal!")
 
     # Octal para Hexadecimal:
 
+    elif a == "3" and b == "4":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nOctal para Hexadecimal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", format(int(a, 8), "X"), "\n")
+            except:
+                print ("\nEntre com um número octal!")
+
     # Hexadecimal para Decimal:
+
+    elif a == "4" and b == "1":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nHexadecimal para Decimal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", int(a, 16), "\n")
+            except:
+                print ("\nEntre com um número octal!")
 
     # Hexadecimal para Binário:
 
+    elif a == "4" and b == "2":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nHexadecimal para Decimal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", format(int(a, 16), "b"), "\n")
+            except:
+                print ("\nEntre com um número octal!")
+
     # Hexadecimal para Octal:
+
+    elif a == "4" and b == "3":
+        print ("*para sair, entre com 's'\npara voltar, entre com 'm'*\n\nHexadecimal para Octal:\n")
+        while True:
+            a = input ("Nº: ")
+            if a == "s" or a == "m":
+                break
+            try:
+                print (a, "=", format(int(a, 16), "o"), "\n")
+            except:
+                print ("\nEntre com um número octal!")
 
 print ("\nAdeus!")
