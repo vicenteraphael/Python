@@ -55,7 +55,7 @@ while a != "s":
             try:
                 print (a ,"=", format(int(a), "b"), "\n")
             except:
-                print ("\nEntre com um número!")
+                print ("\nEntre com um número de base decimal!")
 
     # Decimal para Octal:
 
@@ -68,7 +68,7 @@ while a != "s":
             try:
                 print (a, "=", format(int(a), "o"), "\n")
             except:
-                print ("\nEntre com um número!")
+                print ("\nEntre com um número de base decimal!")
 
     # Decimal para Hexadecimal:
 
@@ -81,7 +81,7 @@ while a != "s":
             try:
                 print (a, "=", format(int(a), "X"), "\n")
             except:
-                print ("\nEntre com um número!")
+                print ("\nEntre com um número de base decimal!")
 
     # Binário para Decimal:
 
@@ -172,7 +172,7 @@ while a != "s":
             try:
                 print (a, "=", int(a, 16), "\n")
             except:
-                print ("\nEntre com um número octal!")
+                print ("\nEntre com um número hexadecimal!")
 
     # Hexadecimal para Binário:
 
@@ -185,7 +185,7 @@ while a != "s":
             try:
                 print (a, "=", format(int(a, 16), "b"), "\n")
             except:
-                print ("\nEntre com um número octal!")
+                print ("\nEntre com um número hexadecimal!")
 
     # Hexadecimal para Octal:
 
@@ -198,6 +198,6 @@ while a != "s":
             try:
                 print (a, "=", format(int(a, 16), "o"), "\n")
             except:
-                print ("\nEntre com um número octal!")
+                print ("\nEntre com um número hexadecimal!")
 
 print ("\nAdeus!")
