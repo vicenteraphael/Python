@@ -13,76 +13,51 @@ tgb = tangente de Beta
 sinc = seno de Theta
 cosc = cosseno de Theta
 tgc = tangente de Theta
-msg_erro
-msg_adeus
 """
-
-def msg_erro():
-    print ("\n")
-    print ("*entre com números*")
-def msg_adeus():
-    print ("\n")
-    print ("Adeus!")
 
 # Boas-vindas:
 
-print ("\n")
-print ("Bem-vindo(a) à Calculadora Trigonométrica do Raphael"); print ("\n")
-print ("Pressione 'Enter' para continuar \nPara sair, digite 's'"); print ("\n")
-a = input ()
-if a == "s":
-    msg_adeus()
+print ("\nBem-vindo(a) à Calculadora Trigonométrica do Raphael\n")
+a = ''
 while a != "s":
 
     #Valores de Entrada:
 
-    print ("Entre com os valores do Triângulo: \n*Para sair, digite 's'*"); print ("\n")
+    print ("Entre com os valores do Triângulo: \n*Para sair, digite 's'*\n")
     while True:
         try:
             a = input ("1º lado (a): ")
             if a == "s":
                 break
-            else:
-                a = float(a)
-                break
+            a = float(a)
+            break
         except ValueError or TypeError:
-            msg_erro()
-            if a == "s":
-                break
+            print ("Entre com um número!")
     if a == "s":
-        msg_adeus()
         break
     while True:
         try:
             b = input ("2º lado (b): ")
             if b == "s":
                 break
-            else:
-                b = float(b)
-                break
+            b = float(b)
+            break
         except ValueError or TypeError:
-            msg_erro()
-            if b == "s":
-                break
+            print ("Entre com um número!")
     if b == "s":
-        msg_adeus()
         break
     while True:
         try:
             c = input ("3º lado (c): ")
             if c == "s":
                 break
-            else:
-                c = float(c)
-                break
+            c = float(c)
+            break
         except ValueError or TypeError:
-            msg_erro()
-            if c == "s":
-                break
+            print ("Entre com um número!")
     if c == "s":
-        msg_adeus()
         break
-    print ("\n")
+    print ("")
 
     #Tipo de Triângulo e saída:
 
@@ -95,22 +70,19 @@ while a != "s":
             print ("O Triângulo é Escaleno")
         if a**2 == b**2 + c**2 or b**2 == a**2 + c**2 or c**2 == b**2 + a**2:
             print ("O triângulo é Retângulo")
-        print ("\n")
-        print ("Desejas:"); print ("\n")
-        print ("1) Voltar ao início \n2) Calcular Seno, Cosseno e Tangente \n3) Sair"); print ("\n")
-        r = input (); print ("\n")
+        print ("\nDesejas: \n\n1) Calcular Seno, Cosseno e Tangente \n2) Voltar ao início \n3) Sair\n")
+        r = input ()
         if r != "1" and r != "2" and r != "3":
-            print ("*alternativa inválida* Desejas:"); print ("\n")
-            print ("1) Voltar ao início \n2) Calcular Seno, Cosseno e Tangente \n3) Sair"); print ("\n")
-            r = input (); print ("\n")
+            print ("\n*alternativa inválida*")
+            print ("Desejas: \n\n1) Calcular Seno, Cosseno e Tangente \n2) Voltar ao início \n3) Sair\n")
+            r = input ()
         elif r == "3":
-            print ("Adeus")
             break
-        elif r == "2":
+        elif r == "1":
 
         # Cálculo Trigonométrico:
 
-            print ("\nTendo Alfa como sendo o ângulo oposto ao lado a:", a ,"\n Beta sendo o ângulo oposto ao lado b:", b,"\ne Theta sendo o ângulo oposto ao lado c:", c,); print ("\n")
+            print ("\nTendo Alfa como sendo o ângulo oposto ao lado a:", a ,"\n Beta sendo o ângulo oposto ao lado b:", b,"\ne Theta sendo o ângulo oposto ao lado c:", c,"\n")
             cosa = (a**2 - (b**2 + c**2)) / (- 2 * b * c)
             sina = (1 - cosa**2) ** 0.5
             tga = sina / cosa
@@ -125,22 +97,13 @@ while a != "s":
 
             print ("seno de Alfa =", sina, "      cosseno de Alfa =", cosa, "      tangente de Alfa =", tga)
             print ("seno de Beta =", sinb, "      cosseno de Beta =", cosb, "      tangente de Beta =", tgb)
-            print ("seno de Theta =", sinc, "      cosseno de Theta =", cosc, "      tangente de Theta =", tgc); print ("\n")
-            print ("Para continuar, pressione 'Enter' \nPara sair, digite 's'"); print ("\n")
+            print ("seno de Theta =", sinc, "      cosseno de Theta =", cosc, "      tangente de Theta =", tgc)
+            print ("\nPara continuar, pressione 'Enter'. Para sair, digite 's'\n")
             r = input ()
             if r == "s":
-                msg_adeus()
                 break
-        elif r == "1":
-            continue
     else:
-        print ("Os valores dados não formam um triângulo :/"); print ("\n")
+        print ("Os valores dados não formam um triângulo :/")
+    print ("")
 
-        # Voltar ao Menu Inical ou Sair
-        
-        print ("Para continuar, pressione 'Enter' \nPara sair, digite 's'"); print ("\n")
-        r = input ()
-        if r == "s":
-            msg_adeus()
-            break
-    print ("\n")
+print ("\nAdeus!")

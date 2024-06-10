@@ -8,37 +8,37 @@ r = variável resposta
 #Funções:
 
 def question1():
-    print ("1. Qual o plural da palavra 'qualquer'?"); print ("\n")
-    print ("a) quaisqueres \nb) quaisquer \nc) qualqueres \nd) não existe"); print ("\n")
+    print ("1. Qual o plural da palavra 'qualquer'?\n")
+    print ("a) quaisqueres \nb) quaisquer \nc) qualqueres \nd) não existe\n")
 def question2():
-    print ("2. Quem nasce no Rio Grande do Norte é:"); print ("\n")
-    print ("a) Rio Grandense Nortista \nb) Rio Grande do Norteiro \nc) Potiguar \nd) Rio Grandista do Norte"); print ("\n")
+    print ("2. Quem nasce no Rio Grande do Norte é:\n")
+    print ("a) Rio Grandense Nortista \nb) Rio Grande do Norteiro \nc) Potiguar \nd) Rio Grandista do Norte\n")
 def question3():
-    print ("3. Qual o resultado da expressão 2 - (2 - 2) * 4?"); print ("\n")
-    print ("a) - 8 \nb) 0 \nc) 8 \nd) 2"); print ("\n")
+    print ("3. Qual o resultado da expressão 2 - (2 - 2) * 4?\n")
+    print ("a) - 8 \nb) 0 \nc) 8 \nd) 2\n")
 def question4():
-    print ("4. Qual dos países a seguir NÃO é da Europa?"); print ("\n")
-    print ("a) Egito \nb) Grécia \nc) Hungria \nd) Polônia"); print ("\n")
+    print ("4. Qual dos países a seguir NÃO é da Europa?\n")
+    print ("a) Egito \nb) Grécia \nc) Hungria \nd) Polônia\n")
 def question5():
-    print ("5. A palavra 'inadvertidamente' é um(a):"); print ("\n")
-    print ("a) verbo \nb) preposição \nc) advérbio \nd) interjeição"); print ("\n")
+    print ("5. A palavra 'inadvertidamente' é um(a):\n")
+    print ("a) verbo \nb) preposição \nc) advérbio \nd) interjeição\n")
 def question6():
-    print ("6. O número 293.45 pertence ao conjunto dos números:"); print ("\n")
-    print ("a) Inteiros \nb) Racionais \nc) Irracionais \nd) Naturais"); print ("\n")
+    print ("6. O número 293.45 pertence ao conjunto dos números:\n")
+    print ("a) Inteiros \nb) Racionais \nc) Irracionais \nd) Naturais\n")
 def question7():
-    print ("7. Regime político no qual o rei possui total poder:"); print ("\n")
-    print ("a) Democracia \nb) Absolutismo \nc) Anarquismo \nd) Comunismo"); print ("\n")
+    print ("7. Regime político no qual o rei possui total poder:\n")
+    print ("a) Democracia \nb) Absolutismo \nc) Anarquismo \nd) Comunismo\n")
 def question8():
-    print ("8. No dia 21 de abril comemora-se:"); print ("\n")
-    print ("a) Carnaval \nb) Páscoa \nc) Dia do Trabalho \nd) Dia de Tiradentes "); print ("\n")
+    print ("8. No dia 21 de abril comemora-se:\n")
+    print ("a) Carnaval \nb) Páscoa \nc) Dia do Trabalho \nd) Dia de Tiradentes \n")
 def question9():
-    print ("9. Qual figura de linguagem predominante no ditado popular: 'Água mole em pedra dura, tanto bate até que fura'?"); print ("\n")
-    print ("a) Antítese \nb) Metonímia \nc) Metáfora \nd) Prosopopéia"); print ("\n")
+    print ("9. Qual figura de linguagem predominante no ditado popular: 'Água mole em pedra dura, tanto bate até que fura'?\n")
+    print ("a) Antítese \nb) Metonímia \nc) Metáfora \nd) Prosopopéia\n")
 def question10():
-    print ("10. De quantas maneiras podemos organizar uma fila de 4 pessoas?"); print ("\n")
-    print ("a) 16 \nb) 8 \nc) 12 \nd) 24"); print ("\n")
+    print ("10. De quantas maneiras podemos organizar uma fila de 4 pessoas?\n")
+    print ("a) 16 \nb) 8 \nc) 12 \nd) 24\n")
 def msg_erro():
-    print ("\n"); print ("*Alternativa inválida*")
+    print ("\n*alternativa inválida*")
 
 r = ""
 while r != "s":
@@ -48,13 +48,10 @@ while r != "s":
     a = 0
     e = 0
 
-    print ("\n")
-    print ("Bem-vindo(a) ao Trivia Quiz do Raphael"); print ("\n")
-    print ("Para iniciar, pressione 'Enter'\nPara sair, digite 's'"); print ("\n")
+    print ("\nBem-vindo(a) ao Trivia Quiz do Raphael\n")
+    print ("Para iniciar, pressione 'Enter'\nPara sair, digite 's'\n")
     r = input ()
     if r == "s":
-        print ("\n")
-        print ("Adeus!")
         break
     
     #Pergunta 1:
@@ -290,7 +287,7 @@ while r != "s":
     #Resultado e ponderações:
 
     print ("\n")
-    print ("RESULTADOS:"); print ("\n"); print ("Acertos:", a, "\nErros:", e); print ("\n")
+    print ("RESULTADOS:\n"); print ("Acertos:", a, "\nErros:", e); print ("\n")
     if a <= 2 and a >= 1:
         print ("Você precisa melhorar!!")
     elif a <= 4 and a >= 3:

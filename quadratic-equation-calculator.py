@@ -6,21 +6,13 @@ c = coeficiente c
 dt = delta
 x1 = x'
 x2 = x''
-def msg_adeus()
 """
-
-def msg_adeus():
-    print ("\n"); print ("Adeus!")
 
 # Boas-vindas:
 
-print ("\n")
-print ("Bem-vindo(a) à Calculadora de Raízes de Equações Quadráticas do Raphael"); print ("\n")
-print ("Pressione 'Enter' para continuar \nPara sair, digite 's'"); print ("\n")
+print ("\nBem-vindo(a) à Calculadora de Raízes de Equações Quadráticas do Raphael\n")
+print ("Pressione 'Enter' para continuar \nPara sair, digite 's'")
 a = input()
-if a == "s":
-    print ("\n")
-    print ("Adeus!")
 
 # Entrada dos Coeficientes:   
 
@@ -31,45 +23,39 @@ while a != "s":
             a = input ("a = ")
             if a == "s":
                 break
-            else:
-                a = float(a)
-                break
+            a = float(a)
+            break
         except ValueError or TypeError:
-            print ("*para sair, digite 's'* \nEntre com um número!")
+            print ("Entre com um número!")
             if a == "s":
                 break
     if a == "s":
-        msg_adeus()
         break
     while True:
         try:
             b = input ("b = ")
             if b == "s":
                 break
-            else:
-                b = float(b)
-                break
+            b = float(b)
+            break
         except ValueError or TypeError:
-            print ("*para sair, digite 's'* \nEntre com um número!")
+            print ("Entre com um número!")
             if b == "s":
                 break
     if b == "s":
-        msg_adeus()
         break
     while True:
         try:
             c = input ("c = ")
             if c == "s":
                 break
-            else:
-                c = float(c)
-                break
+            c = float(c)
+            break
         except:
-            print ("*para sair, digite 's'* \nEntre com um número!")
+            print ("Entre com um número!")
             if c == "s":
                 break
     if c == "s":
-        msg_adeus()
         break
 
     # Cálculo das Raízes:
@@ -82,13 +68,11 @@ while a != "s":
         # Saída e/ou Ponderações:
 
         if dt == 0:
-            print ("\n")
-            print ("As raízes são iguais:", x1); print ("\n")
+            print ("\nAs raízes são iguais:", x1)
         elif dt < 0:
-            print ("\n")
-            print ("A equaçaõ não possui solução real"); print ("\n")
+            print ("\nA equaçaõ não possui solução real")
         else:
-            print ("\n")
-            print ("x' = ", x1, "\nx'' = ", x2); print ("\n")
+            print ("\nx' = ", x1, "\nx'' = ", x2)
     else:
-        print ("Os coeficientes não formam uma equação quadrática!"); print ("\n")
+        print ("\nOs coeficientes não formam uma equação quadrática!")
+print ("\nAdeus!")
