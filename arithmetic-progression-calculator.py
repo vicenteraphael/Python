@@ -1,6 +1,5 @@
 print ("\nBem-vindo(a) à Calculadora de Progressão Aritmética do Raphael\n")
 
-ans = None
 def readline(var, text):
     while True:
         try:
@@ -31,11 +30,12 @@ def whole_sequence():
         return 1
 
     # Saída:
-    print ("\nTodos os termos: ")
-    while first_term < last_term-2*ratio:
-        print ("{}, ".format(first_term), end='')
+    print ("\nConjunto verdade para todos termos da seqûencia:\n{", end=''); print(first_term, end='')
+    first_term += ratio
+    while first_term <= last_term:
+        print ("; {}".format(first_term), end='')
         first_term += ratio
-    print ("{} e {}\n".format(first_term+ratio, last_term))
+    print("}\n")
 
 def find_term():
     first_term, ratio, index = None, None, None
@@ -50,7 +50,7 @@ def find_term():
         return 0
     elif ratio == "m":
         return 1
-    index = readline("Índice do termo desejado (n de an): ")
+    index = readline(index, "Índice do termo desejado (n de an): ")
     if index == "s":
         return 0
     elif index == "m":
@@ -61,7 +61,8 @@ def find_term():
 
 def find_ratio():
     first_term, second_term = None, None
-    first_term = input (first_term, "1º termo: ")
+    #Entrada
+    first_term = readline(first_term, "1º termo: ")
     if first_term == "s":
         return 0
     elif first_term == "m":
@@ -88,9 +89,9 @@ def general_sum():
         return 0
     elif last_term == "m":
         return 1
-    last_index = input (last_index, "Índice do último termo da progressão (n de an): ")
+    last_index = readline(last_index, "Índice do último termo da progressão (n de an): ")
     if last_index == "s":
-        return False
+        return 0
     elif last_index == "m":
         return 1
 
@@ -98,54 +99,55 @@ def general_sum():
     print ("\nSn =", ((first_term + last_term) * last_index ) / 2)
 
 # Menu de opções:
-while ans != "s":
-    print ("\nVocê deseja calcular: \n\n1) Todos os termos da progressão \n2) Um termo n da progressão (an) \n3) A razão da progressão (r) \n4) A soma geral dos termos da progressão (Sn) \n5) Sair\n")
-    ans = input()
-    while ans != "1" and ans != "2" and ans != "3" and ans != "4" and ans != "5" and ans != "s":
-        print ("\n*alternativa inválida*")
-        print ("Você deseja calcular: \n\n1) Todos os termos da progressão \n2) Um termo n da progressão (an) \n3) A razão da progressão (r) \n4) A soma geral dos termos da progressão (Sn) \n5) Sair\n")
+def main(ans):
+    while ans != "s":
+        print ("\nVocê deseja calcular: \n\n1) Todos os termos da progressão \n2) Um termo n da progressão (an) \n3) A razão da progressão (r) \n4) A soma geral dos termos da progressão (Sn) \n5) Sair\n")
         ans = input()
-    if ans == "5" or ans == "s":
-        break
+        while ans != "1" and ans != "2" and ans != "3" and ans != "4" and ans != "5" and ans != "s":
+            print ("\n*alternativa inválida*")
+            print ("Você deseja calcular: \n\n1) Todos os termos da progressão \n2) Um termo n da progressão (an) \n3) A razão da progressão (r) \n4) A soma geral dos termos da progressão (Sn) \n5) Sair\n")
+            ans = input()
+        if ans == "5" or ans == "s":
+            break
 
-    # Todos os termos da progressão:
-    if ans == "1":
-        print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \nInforme-me:\n")
-        while ans == "1":
-            result = whole_sequence()
-            if result == 0:
-                ans = "s"
-            elif result == 1:
-                ans = None
+        # Todos os termos da progressão:
+        if ans == "1":
+            print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \nInforme-me:\n")
+            while ans == "1":
+                result = whole_sequence()
+                if result == 0:
+                    ans = "s"
+                elif result == 1:
+                    ans = None
 
-    # Termo n da progressão (an):
-    if ans == "2":
-        print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \nInforme-me:\n")
-        while ans == "2":
-            result = find_term()
-            if result == 0:
-                ans = "s"
-            elif result == 1:
-                ans = None
+        # Termo n da progressão (an):
+        if ans == "2":
+            print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \nInforme-me:\n")
+            while ans == "2":
+                result = find_term()
+                if result == 0:
+                    ans = "s"
+                elif result == 1:
+                    ans = None
 
-    # Razão da progressão:
-    if ans == "3":
-        print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'*\nInforme-me dois termos consecutivos da progressão:\n")
-        while ans == "3":
-            result = find_ratio()
-            if result == 0:
-                ans = "s"
-            elif result == 1:
-                ans = None
-    
-    # Soma geral dos termos (Sn):
-    if ans == "4":
-        print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \nInforme-me:\n")
-        while ans == "4":
-            result = general_sum()
-            if result == 0:
-                ans = "s"
-            elif result == 1:
-                ans = None
-
+        # Razão da progressão:
+        if ans == "3":
+            print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'*\nInforme-me dois termos consecutivos da progressão:\n")
+            while ans == "3":
+                result = find_ratio()
+                if result == 0:
+                    ans = "s"
+                elif result == 1:
+                    ans = None
+        
+        # Soma geral dos termos (Sn):
+        if ans == "4":
+            print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \nInforme-me:\n")
+            while ans == "4":
+                result = general_sum()
+                if result == 0:
+                    ans = "s"
+                elif result == 1:
+                    ans = None
+main(None)
 print ("\nAdeus!")
