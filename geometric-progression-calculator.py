@@ -1,253 +1,187 @@
-"""
-Variáveis e Funções:
-a = 1º termo (a1); termo anterior (an - 1); variável resposta
-b = índice do termo desejado (n de an); termo qualquer (an)
-n = variável resposta; razão (n) da progressão
-
-"""
-
-a = ""
-b = ""
-n = ""
-
-def informe():
-    print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \n\nInforme:\n")
-
-def menu():
-    print ("Desejas calcular: \n\n1) Todos os termos da progressão \n2) Um termo n da progressão (an) \n3) A razão da progressão (q) \n4) A soma geral FINITA dos termos da progressão (Sn) \n5) A soma geral INFINITA dos termos da progressão (s∞) \n6) Sair \n")
-
-# Boas vindas:
-
 print ("\nBem-vindo(a) à Calculadora de Progressão Geométrica do Raphael\n")
 
-# Menu de opções:
+def readline(var, text):
+    while True:
+        try:        
+            var = input (text)
+            if var != "s" and var != "m":
+                var = float(var)
+            return var
+        except:
+            print ("Entre com um número!")
 
-while n != "s" and a != "s" and b != "s":
-    menu()
-    n = input ()
-    while n != "1" and n != "2" and n != "3" and n != "4" and n != "5" and n != "6" and n != "s":
-        print ("*alternativa inválida*"); menu(); n = input ()
-    if n == "6" or n == "s":        
-        break
-    
-    # Todos os Termos da Progressão:
+def all_terms():
+    firstTerm, lastTerm, ratio = None, None, None
+    # Entrada:
+    firstTerm = readline(firstTerm, "1º termo da progressão (a1): ")
+    if firstTerm == "s":
+        return 1
+    elif firstTerm == "m":
+        return 0
+    lastTerm = readline(lastTerm, "Último termo da progressão (an): ")
+    if lastTerm == "s":
+        return 1
+    elif lastTerm == "m":                
+        return 0
+    ratio = readline(ratio, "Razão da progressão (q): ")
+    if ratio == "s":
+        return 1
+    elif ratio == "m":
+        return 0
 
-    if n == "1":
-        informe()
-        while n == "1":
-            
-            # Entrada:
+    # Saída:
+    print ("\nConjunto contendo todos os termos:\n{", end=''); print (firstTerm, end='')
+    firstTerm *= ratio
+    while firstTerm <= lastTerm:
+        print ("; {}" .format(firstTerm), end='')
+        firstTerm *= ratio
+    print ("}\n")
 
-            while True:
-                try:        
-                    a = input ("1º termo da progressão (a1): ")
-                    if a == "s" or a == "m":
-                        break
-                    a = float(a)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if a == "s" or a == "m":            
-                break
-            while True:
-                try:
-                    b = input ("Último termo da progressão (an): ")
-                    if b == "s" or b == "m":
-                        break
-                    b = float(b)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if b == "s" or b == "m":                
-                break
-            while True:
-                try:
-                    n = input ("Razão da progressão (q): ")
-                    if n == "s" or n == "m":
-                        break
-                    n = float(n)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if n == "s" or n == "m":                
-                break
+def find_general_term():
+    firstTerm, index, ratio = None, None, None
+    # Entrada:
+    firstTerm = readline(firstTerm, "1º termo da progressão (a1): ")
+    if firstTerm == "s":
+        return 1
+    elif firstTerm == "m":
+        return 0
+    index = readline(index, "Índice do termo desejado (n de an): ")
+    if index == "s":
+        return 1
+    elif index == "m":                
+        return 0
+    ratio = readline(ratio, "Razão da progressão (q): ")
+    if ratio == "s":
+        return 1
+    elif ratio == "m":
+        return 0
 
-            # Saída:
+    # Saída:
+    print ("\nan =", firstTerm * ratio ** (index-1))
 
-            print ("\nTodos os termos:\n")
-            while a <= b:
-                if a == b:
-                    print (a)
-                elif a == b / n:
-                    print ("{} e " .format(a), end='')
-                else:
-                    print ("{}, " .format(a), end='')
-                a *= n
-            n = "1"; print ("")
+def find_ratio():
+    anyTerm, prevTerm = None, None
+    # Entrada:
+    anyTerm = readline(anyTerm, "Algum termo da progressão (an): ")
+    if anyTerm == "s":
+        return 1
+    elif anyTerm == "m":
+        return 0
+    prevTerm = readline(prevTerm, "Termo anterior (an - 1): ")
+    if prevTerm == "s":
+        return 1
+    elif prevTerm == "m": 
+        return 0
 
-    # Termo Geral da Progressão (an):
+    # Saída:
+    print ("\nq =", prevTerm / anyTerm, "\n")
 
-    elif n == "2":
-        informe()
-        while n == "2":
-            
-            # Entrada:
+def general_finite_sum():
+    firstTerm, ratio, nTerms = None, None, None
+    # Entrada:
+    firstTerm = readline(firstTerm, "1º termo da progressão (a1): ")
+    if firstTerm == "s":
+        return 1
+    elif firstTerm == "m":
+        return 0
+    ratio = readline(ratio, "Razão da progressão (q): ")
+    if ratio == "s":
+        return 1
+    elif ratio == "m":
+        return 0
+    nTerms = readline(nTerms, "Quantidade de termos (n) da progressão: ")
+    if nTerms == "s":
+        return 1
+    elif nTerms == "m":
+        return 0
 
-            while True:
-                try:        
-                    a = input ("1º termo da progressão (a1): ")
-                    if a == "s" or a == "m":
-                        break
-                    a = float(a)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if a == "s" or a == "m":            
-                break
-            while True:
-                try:
-                    b = input ("Índice do termo desejado (n de an): ")
-                    if b == "s" or b == "m":
-                        break
-                    b = float(b)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if b == "s" or b == "m":                
-                break
-            while True:
-                try:
-                    n = input ("Razão da progressão (q): ")
-                    if n == "s" or n == "m":
-                        break
-                    n = float(n)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if n == "s" or n == "m":                
-                break
+    # Saída:
+    try:
+        print ("\nSn =", (firstTerm * (ratio ** nTerms - 1)) / (ratio - 1), "\n")
+    except OverflowError:
+        print ("Resultado grande demais, meu nobre :/\n")
 
-            # Saída:
+def general_infinite_sum():
+    firstTerm, ratio = None, None
+    # Entrada:
+    firstTerm = readline(firstTerm, "1º termo da progressão (a1): ")
+    if firstTerm == "s":
+        return 1
+    elif firstTerm == "m":
+        return 0
+    while True:
+        ratio = readline(ratio, "Razão da progressão (q): ")
+        if ratio == "s":
+            return 1
+        elif ratio == "m":                
+            return 0         
+        elif ratio <= -1 or ratio >= 1:
+            print ("A razão deve estar entre 1 e -1 para que a soma infinita seja válida")
+        else:
+            break
 
-            print ("\nan =", a * n ** (b-1)); n = "2"; print ("")
+    # Saída:
+    print ("\ns∞ =", firstTerm / (1 - ratio), "\n")
 
-    # Razão da progressão (q):
+def main(ans):
+    # Menu de opções:
+    while ans != "s":
+        print ("Desejas calcular: \n\n1) Todos os termos da progressão \n2) Um termo n da progressão (an) \n3) A razão da progressão (q) \n4) A soma geral FINITA dos termos da progressão (Sn) \n5) A soma geral INFINITA dos termos da progressão (s∞) \n6) Sair \n")
+        ans = input ()
+        while ans != "1" and ans != "2" and ans != "3" and ans != "4" and ans != "5" and ans != "6" and ans != "s":
+            print ("*alternativa inválida*"); print ("Desejas calcular: \n\n1) Todos os termos da progressão \n2) Um termo n da progressão (an) \n3) A razão da progressão (q) \n4) A soma geral FINITA dos termos da progressão (Sn) \n5) A soma geral INFINITA dos termos da progressão (s∞) \n6) Sair \n"); ans = input ()
+        if ans == "6" or ans == "s":
+            break
+        
+        # Todos os Termos da Progressão:
+        if ans == "1":
+            print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \n\nInforme:\n")
+            while ans == "1":
+                result = all_terms()
+                if result == 0:
+                    ans = None
+                elif result == 1:
+                    ans = "s"
 
-    elif n == "3":
-        informe()
-            
-            # Entrada:
+        # Termo Geral da Progressão (an):
+        elif ans == "2":
+            print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \n\nInforme:\n")
+            while ans == "2":
+                result = find_general_term()
+                if result == 0:
+                    ans = None
+                elif result == 1:
+                    ans = "s"
 
-        while n == "3":    
-            while True:
-                try:        
-                    b = input ("Algum termo da progressão (an): ")
-                    if b == "s" or b == "m":
-                        break
-                    b = float(b)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if b == "s" or b == "m":            
-                break
-            while True:
-                try:        
-                    a = input ("Termo anterior (an - 1): ")
-                    if a == "s" or a == "m":
-                        break
-                    a = float(a)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if a == "s" or a == "m":                
-                break
+        # Razão da progressão (q):
+        elif ans == "3":
+            print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \n\nInforme:\n")
+            while ans == "3":
+                result = find_ratio()
+                if result == 0:
+                    ans = None
+                elif result == 1:
+                    ans = "s"
+        
+        # Soma geral FINITA dos termos da progressão (Sn):
+        elif ans == "4":
+            print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \n\nInforme:\n")
+            while ans == "4":
+                result = general_finite_sum()
+                if result == 0:
+                    ans = None
+                elif result == 1:
+                    ans = "s"
 
-            # Saída:
+        # Soma geral INFINITA dos termos da progressão (s∞):
+        elif ans == "5":
+            print ("\n*Para sair, entre com 's'. Para voltar ao menu de opções, entre com 'm'* \n\nInforme:\n")
+            while ans == "5":
+                result = general_infinite_sum()
+                if result == 0:
+                    ans = None
+                elif result == 1:
+                    ans = "s"
 
-            print ("\nq =", b / a); n = "3"; print ("")
-    
-    # Soma geral FINITA dos termos da progressão (Sn):
-
-    elif n == "4":
-        informe()
-            
-            # Entrada:
-        while n == "4":
-            while True:
-                try:        
-                    a = input ("1º termo da progressão (a1): ")
-                    if a == "s" or a == "m":
-                        break
-                    a = float(a)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if a == "s" or a == "m":            
-                break
-            while True:
-                try:
-                    b = input ("Razão da progressão (q): ")
-                    if b == "s" or b == "m":
-                        break
-                    b = float(b)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if b == "s" or b == "m":
-                break
-            while True:
-                try:
-                    n = input ("Quantidade de termos (n) da progressão: ")
-                    if n == "s" or n == "m":
-                        break
-                    n = float(n)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if n == "s" or n == "m":
-                break
-
-            # Saída:
-
-            try:
-                print ("\nSn =", (a * (b ** n - 1)) / b - 1)
-            except OverflowError:
-                print ("Resultado grande demais, meu nobre :/")
-            n = "4"; print ("")
-
-    # Soma geral INFINITA dos termos da progressão (s∞):
-
-    elif n == "5":
-        informe()
-            
-            # Entrada:
-
-        while n == "5":
-            while True:
-                try:        
-                    a = input ("1º termo da progressão (a1): ")
-                    if a == "s" or a == "m":
-                        break
-                    a = float(a)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if a == "s" or a == "m":            
-                break
-            while True:
-                try:
-                    b = input ("Razão da progressão (q): ")
-                    if b == "s" or b == "m":
-                        break
-                    b = float(b)
-                    break
-                except ValueError or TypeError:
-                    print ("Entre com números!")
-            if b == "s" or b == "m":                
-                break            
-
-            # Saída:
-
-            print ("\ns∞ =", a / 1 - b); n = "5"; print ("")
-
+main(None)
 print ("\nAdeus!")
